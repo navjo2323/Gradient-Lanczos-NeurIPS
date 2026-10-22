@@ -1,0 +1,36 @@
+{
+  "validation_date": "2026-10-22",
+  "tests": {
+    "command": "python -m pytest -q tests/test_graph_reproduction.py",
+    "passed": 7,
+    "failed": 0
+  },
+  "clean_environment": {
+    "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "platform": "macOS-26.2-arm64-arm-64bit"
+  },
+  "full_graph_accuracy_cases": 16,
+  "recomputed_sparse_block_reference_cases": 4,
+  "max_scaled_difference_vs_recorded_outputs": 0.0,
+  "max_scaled_difference_vs_recorded_references": 0.0,
+  "timing_cases_exercised": 8,
+  "timing_pairs_per_case": 3,
+  "timing_environment": "source_environment_metadata.json",
+  "corrected_timer_function_bodies_preserved": "AST-identical evaluate_complete, measure_ours, measure_ko",
+  "paper_plots_generated": 3,
+  "paper_plots_visual_inspection": "passed; labels and legend readable, no clipped marks",
+  "paper_table4_display_match": true,
+  "fresh_plot_generation": "passed",
+  "network_download": "Attempted but connection refused after sandbox escalation; official URLs verified; existing local datasets passed exact SHA-256 verification.",
+  "limitations": [
+    "New timing values are validation runs and do not replace frozen paper measurements.",
+    "Final paper Table 1 coarse powers of ten are retained separately from exact numerical errors.",
+    "Both historical error definitions divide by max(1,abs(reference)); sensitivity plots are labeled scaled errors."
+  ],
+  "direct_file_entry_points": {
+    "smoke": "passed in clean environment",
+    "plots": "passed in clean environment"
+  }
+}

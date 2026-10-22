@@ -1,0 +1,467 @@
+{
+  "validation_date": "2026-10-22",
+  "environment": {
+    "python": "3.11.14",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "torch": "2.14.1",
+    "platform": "macOS 26.2 arm64"
+  },
+  "unit_tests": {
+    "command": "python -m pytest tests/test_hamiltonian.py tests/test_affine_gpu.py -q",
+    "passed": 4
+  },
+  "hamiltonian_full_problem_initialization": {
+    "checked_utc": "2026-10-22T22:41:32.189929+00:00",
+    "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "seconds": 15.570908708003117,
+    "checks": [
+      {
+        "depth": 30,
+        "relative_gradient_error": 0.07485989972227508,
+        "recorded_relative_gradient_error": 0.07485989972227508,
+        "absolute_difference": 0.0,
+        "matches_table_2_three_significant_digits": true
+      },
+      {
+        "depth": 40,
+        "relative_gradient_error": 0.0006306501718696455,
+        "recorded_relative_gradient_error": 0.0006306501718696455,
+        "absolute_difference": 0.0,
+        "matches_table_2_three_significant_digits": true
+      },
+      {
+        "depth": 50,
+        "relative_gradient_error": 5.622323906202024e-07,
+        "recorded_relative_gradient_error": 5.622323906202024e-07,
+        "absolute_difference": 0.0,
+        "matches_table_2_three_significant_digits": true
+      }
+    ],
+    "scope": "Full L=8, 30-sample initialization at m=30,40,50; no 400-step retraining or timing replication."
+  },
+  "affine_saved_records": {
+    "audit_torch_version": "2.14.1",
+    "configuration": {
+      "operator": "hadamard-clusters",
+      "n": 32768,
+      "samples": 2,
+      "clusters": 128,
+      "condition": 10000000000.0,
+      "cluster_width": 1e-08,
+      "seed": 0,
+      "sample_seed": 123,
+      "true_mass": 1e-06,
+      "true_scale": 1.0,
+      "true_alpha": 0.5,
+      "logdet_scale": 1.0,
+      "mass_min": 1e-12,
+      "mass_max": 10.0,
+      "scale_min": 1e-06,
+      "scale_max": 10.0,
+      "alpha_min": 0.05,
+      "alpha_max": 2.0
+    },
+    "prior_center_coordinates": [
+      -13.815510557964274,
+      0.0,
+      0.5
+    ],
+    "prior_strength": 0.0001,
+    "saved_csv_checks": {
+      "mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv": {
+        "rows": 45,
+        "sha256": "971c1565467e2cc72e6cad2a955de51d2c7cb13ee79151925f752c251c230051",
+        "max_reference_absolute_difference": 0.0,
+        "max_recomputed_metric_absolute_difference": 0.0,
+        "max_adam_parameter_difference": 0.0
+      },
+      "mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv": {
+        "rows": 5,
+        "sha256": "c7188cf675571cded53628b614f5f0e0c9bf7d3ed5df768ec411a976aad7c3eb",
+        "max_reference_absolute_difference": 0.0,
+        "max_recomputed_metric_absolute_difference": 0.0,
+        "max_adam_parameter_difference": 0.0
+      },
+      "mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv": {
+        "rows": 4,
+        "sha256": "d9fb6a6d8327ad8ffc7ce497dffe9dc8ebf1e288703538e43dfff8de6bb47c2f",
+        "max_reference_absolute_difference": 0.0,
+        "max_recomputed_metric_absolute_difference": 0.0,
+        "max_adam_parameter_difference": 0.0
+      },
+      "mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv": {
+        "rows": 36,
+        "sha256": "22af7d4eb0156df445124ef9e114d83d9d5f8f6f4af2e62a86c63908884dc4af",
+        "max_reference_absolute_difference": 0.0,
+        "max_recomputed_metric_absolute_difference": 0.0,
+        "max_adam_parameter_difference": 0.0
+      }
+    },
+    "source_sha256": {
+      "experiments/affine_gpu/gp_fit.py": "73a8d9a95923d770a22c3b40891bad9dafcd26d2339f1203bd62e3418c76ac62",
+      "experiments/affine_gpu/kernels.py": "d113a16026aa28d89cf6ea5f370f614804eae9c35ef91f478c41b8f1ae728968",
+      "experiments/affine_gpu/optimizer.py": "8a7c0a42618649a9f1c525ff4424bbb05347bfca722398e600d403856baf84b7"
+    },
+    "tiny_cpu_saved_tensor_check": {
+      "n": 64,
+      "m": 6,
+      "matches_audited_saved_stack_pattern": true,
+      "distinct_basis_blocks": [
+        {
+          "bytes": 256,
+          "j": 1,
+          "views": [
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                64,
+                1
+              ]
+            },
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                1,
+                64
+              ]
+            }
+          ]
+        },
+        {
+          "bytes": 512,
+          "j": 2,
+          "views": [
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                64,
+                2
+              ]
+            },
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                2,
+                64
+              ]
+            }
+          ]
+        },
+        {
+          "bytes": 768,
+          "j": 3,
+          "views": [
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                64,
+                3
+              ]
+            },
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                3,
+                64
+              ]
+            }
+          ]
+        },
+        {
+          "bytes": 1024,
+          "j": 4,
+          "views": [
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                64,
+                4
+              ]
+            },
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                4,
+                64
+              ]
+            }
+          ]
+        },
+        {
+          "bytes": 1280,
+          "j": 5,
+          "views": [
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                64,
+                5
+              ]
+            },
+            {
+              "node": "MvBackward0",
+              "field": "_saved_self",
+              "shape": [
+                5,
+                64
+              ]
+            }
+          ]
+        }
+      ],
+      "total_distinct_bytes": 3840,
+      "scope": "Reachable graph after forward completion in current CPU implementation, not historical MPS peak memory. The final m-column stack is transient and is not reachable from T."
+    },
+    "no_benchmark_reruns": true
+  },
+  "affine_source_ast_identity": {
+    "gp_fit.py": {
+      "FitRow": true,
+      "make_samples": true,
+      "logdet_and_gradient": true,
+      "parameter_prior": true,
+      "bounds_for_params": true,
+      "positive_power_sensitivity": true,
+      "exact_positive_reference": true,
+      "evaluate_lanczos_positive": true,
+      "evaluate_projected_positive": true,
+      "cheb_coefficients_power": true,
+      "evaluate_chebyshev_positive": true,
+      "fwht_columns": true,
+      "base_matvec_matrix": true,
+      "matvec_matrix": true,
+      "evaluate_chebyshev_positive_batch": true,
+      "exact_data_for_samples": true,
+      "approximate_data_for_samples": true,
+      "evaluate_method": true,
+      "run": true,
+      "main": true
+    },
+    "kernels.py": {
+      "LanczosStats": true,
+      "choose_device": true,
+      "synchronize": true,
+      "make_cluster_spectrum": true,
+      "fwht": true,
+      "laplacian_tiles_base": true,
+      "planted_partition_laplacian": true,
+      "sbm_laplacian": true,
+      "sparse_sbm_edges": true,
+      "Operator": true,
+      "tridiagonal": true,
+      "pro_signed_roundoff": true,
+      "update_pro_estimates_next": true,
+      "pro_thresholds": true,
+      "compute_pro_interval": true,
+      "reset_pro_estimates": true,
+      "orthogonalize_selected": true,
+      "project_against_block": true,
+      "project_against_tall_block": true,
+      "lanczos": true,
+      "chebyshev_adjoint_affine": true
+    },
+    "optimizer.py": {
+      "adam_update": true,
+      "timed": true
+    }
+  },
+  "smoke_runs": {
+    "hamiltonian": {
+      "started_utc": "2026-10-22T22:41:24.028246+00:00",
+      "config": {
+        "sites": 3,
+        "samples": 2,
+        "depths": [
+          4,
+          7
+        ],
+        "diag_depths": [
+          4,
+          7
+        ],
+        "steps": 3,
+        "lr": 0.01,
+        "t_min": 0.2,
+        "t_max": 0.7,
+        "seed": 0,
+        "disorder": 0.05,
+        "regime": "easy",
+        "init_scale": 0.1,
+        "out_dir": "results/reruns/hamiltonian_quick"
+      },
+      "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "platform": "macOS-26.2-arm64-arm-64bit",
+      "status": "completed",
+      "finished_utc": "2026-10-22T22:41:24.722959+00:00"
+    },
+    "affine_cpu": {
+      "started_utc": "2026-10-22T22:40:52.109219+00:00",
+      "config": {
+        "device": "cpu",
+        "require_gpu": false,
+        "operator": "hadamard-clusters",
+        "n": 64,
+        "samples": 2,
+        "sample_seed": 123,
+        "seed": 0,
+        "steps": 8,
+        "chebyshev_degree": 48,
+        "clusters": 8,
+        "condition": 100.0,
+        "cluster_width": 1e-08,
+        "true_mass": 0.1,
+        "true_scale": 1.0,
+        "true_alpha": 0.5,
+        "init_mass": 0.1,
+        "init_scale": 1.0,
+        "init_alpha": 1.5,
+        "prior_mass": 1e-06,
+        "prior_scale": 1.0,
+        "prior_alpha": 0.5,
+        "prior_strength": 0.0001,
+        "logdet_scale": 1.0,
+        "mass_min": 1e-12,
+        "mass_max": 10.0,
+        "scale_min": 1e-06,
+        "scale_max": 10.0,
+        "alpha_min": 0.05,
+        "alpha_max": 2.0,
+        "iterations": 1,
+        "learning_rate": 0.02,
+        "ritz_guard": "none",
+        "full_reorth_passes": 1,
+        "beta_breakdown_tolerance": 1e-30,
+        "methods": "exact,full,no,projected,chebyshev",
+        "csv": "results/reruns/affine_gpu/quick.csv"
+      },
+      "configuration_source": "affine_gpu_quick.json",
+      "actual_device": "cpu",
+      "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+      "numpy": "2.4.6",
+      "torch": "2.14.1",
+      "platform": "macOS-26.2-arm64-arm-64bit",
+      "torch_threads": 1,
+      "mps_available": false,
+      "cuda_available": false,
+      "environment": {
+        "PYTORCH_ENABLE_MPS_FALLBACK": null,
+        "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "status": "completed",
+      "historical_reproduction": "Reconstructed settings; see docs/affine_gpu.md.",
+      "finished_utc": "2026-10-22T22:40:52.403711+00:00"
+    },
+    "affine_mps": {
+      "started_utc": "2026-10-22T22:41:32.192545+00:00",
+      "config": {
+        "device": "mps",
+        "require_gpu": true,
+        "operator": "hadamard-clusters",
+        "n": 64,
+        "samples": 2,
+        "sample_seed": 123,
+        "seed": 0,
+        "steps": 8,
+        "chebyshev_degree": 48,
+        "clusters": 8,
+        "condition": 100.0,
+        "cluster_width": 1e-08,
+        "true_mass": 0.1,
+        "true_scale": 1.0,
+        "true_alpha": 0.5,
+        "init_mass": 0.1,
+        "init_scale": 1.0,
+        "init_alpha": 1.5,
+        "prior_mass": 1e-06,
+        "prior_scale": 1.0,
+        "prior_alpha": 0.5,
+        "prior_strength": 0.0001,
+        "logdet_scale": 1.0,
+        "mass_min": 1e-12,
+        "mass_max": 10.0,
+        "scale_min": 1e-06,
+        "scale_max": 10.0,
+        "alpha_min": 0.05,
+        "alpha_max": 2.0,
+        "iterations": 1,
+        "learning_rate": 0.02,
+        "ritz_guard": "none",
+        "full_reorth_passes": 1,
+        "beta_breakdown_tolerance": 1e-30,
+        "methods": "exact,full,no,projected,chebyshev",
+        "csv": "results/reruns/affine_gpu/quick_mps.csv"
+      },
+      "configuration_source": "affine_gpu_quick.json",
+      "actual_device": "mps",
+      "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+      "numpy": "2.4.6",
+      "torch": "2.14.1",
+      "platform": "macOS-26.2-arm64-arm-64bit",
+      "torch_threads": 1,
+      "mps_available": true,
+      "cuda_available": false,
+      "environment": {
+        "PYTORCH_ENABLE_MPS_FALLBACK": null,
+        "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      },
+      "status": "completed",
+      "historical_reproduction": "Reconstructed settings; see docs/affine_gpu.md.",
+      "finished_utc": "2026-10-22T22:41:33.149718+00:00"
+    }
+  },
+  "figures": {
+    "rendered_and_visually_inspected": [
+      "Figure 6",
+      "Figure 7",
+      "Figure 8"
+    ],
+    "saved_measurements_unchanged": true
+  },
+  "tables": {
+    "regenerated": [
+      "2",
+      "5",
+      "6a",
+      "6b",
+      "7",
+      "8"
+    ],
+    "table_6b_display": "Published three-decimal truncation retained; separate ordinary-rounding TeX and full-precision CSV exported."
+  },
+  "not_reperformed": [
+    "Complete four-method 400-step L8 Hamiltonian optimization",
+    "Historical large GPU evaluations or timing comparisons",
+    "Reported historical GPU out-of-memory event"
+  ],
+  "historical_gpu_unknowns": [
+    "PyTorch/MPS environment",
+    "Ritz clipping",
+    "Full-reorthogonalization pass count",
+    "Depth1536 Chebyshev degree",
+    "OOM launch configuration and failure log"
+  ],
+  "additional_complete_paper_size_validation": "results/validation/affine_m128.json"
+}

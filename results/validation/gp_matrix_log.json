@@ -1,0 +1,673 @@
+{
+  "validation_date": "2026-10-22",
+  "note": "This is release validation metadata, not a reconstruction of the original runtime environment. Timings are not expected to match. Selected n15000 depths60/80 use the archived dense reference, not a new dense eigendecomposition; the full depth sweep was not rerun.",
+  "commands": [
+    "python experiments/gp_training/data.py",
+    "python scripts/run_experiment.py configs/gp_diagnostic_paper.json",
+    "python scripts/run_experiment.py configs/gp_training_paper.json",
+    "python scripts/run_experiment.py configs/gp_diagnostic_quick.json",
+    "python scripts/run_experiment.py configs/gp_training_quick.json",
+    "python scripts/run_experiment.py configs/matrix_log_quick.json",
+    "python -m pytest tests/test_matrix_log.py tests/test_gp_numerics.py -q",
+    "python experiments/matrix_log/plot.py results/paper/matrix_log/results.json --out outputs/figures/figure1.png",
+    "python experiments/gp_training/plot.py"
+  ],
+  "command_notes": "Configs were executed by invoking their script and args with the clean interpreter. Full GP validation and matrix-log quick output directories were overridden to outputs/gp_training/clean_validation and outputs/matrix_log/clean_validation.",
+  "gp_training_comparison": {
+    "gpytorch": {
+      "epochs": 120,
+      "final_rmse": 0.7446171847951735,
+      "max_history_loss_absolute_difference": 0.0,
+      "max_history_rmse_absolute_difference": 0.0,
+      "max_final_hyperparameter_absolute_difference": 0.0,
+      "final_loss_absolute_difference": 0.0,
+      "final_rmse_absolute_difference": 0.0
+    },
+    "ours_no_reorth": {
+      "epochs": 120,
+      "final_rmse": 0.6887978068780842,
+      "max_history_loss_absolute_difference": 0.0,
+      "max_history_rmse_absolute_difference": 0.0,
+      "max_final_hyperparameter_absolute_difference": 0.0,
+      "final_loss_absolute_difference": 0.0,
+      "final_rmse_absolute_difference": 0.0
+    }
+  },
+  "gp_diagnostic_comparison": {
+    "gpytorch_preconditioned": {
+      "logdet": {
+        "archived": 2416.8634156366243,
+        "rerun": 2416.8634156366243,
+        "absolute_difference": 0.0
+      },
+      "logdet_rel_error_to_dense": {
+        "archived": 0.0022870898462041514,
+        "rerun": 0.0022870898462041514,
+        "absolute_difference": 0.0
+      },
+      "grad_rel_error_to_dense": {
+        "archived": 0.14359005748215484,
+        "rerun": 0.14359005748215484,
+        "absolute_difference": 0.0
+      }
+    },
+    "ours_no_reorth_preconditioned": {
+      "logdet": {
+        "archived": 2416.0180815359154,
+        "rerun": 2416.0180815359154,
+        "absolute_difference": 0.0
+      },
+      "logdet_rel_error_to_dense": {
+        "archived": 0.0019365249569077078,
+        "rerun": 0.0019365249569077078,
+        "absolute_difference": 0.0
+      },
+      "grad_rel_error_to_dense": {
+        "archived": 0.005097040155340332,
+        "rerun": 0.005097040155340332,
+        "absolute_difference": 0.0
+      }
+    }
+  },
+  "matrix_log_quick": {
+    "n": 64,
+    "depths": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "max_forward_value_difference_between_methods": 0.0,
+    "m32_full_projected_relative_gradient_error": 7.46261801006843e-12,
+    "m32_full_adjoint_relative_gradient_error": 1.927595790898086e-12
+  },
+  "tests": {
+    "count": 7,
+    "checks": [
+      "Blocked kernel action vs dense with non-divisible row blocking",
+      "Matrix-log projected Frechet derivative vs scipy.logm central difference",
+      "Same Lanczos forward for projected and adjoint; converged full-reorth gradient vs dense",
+      "GP small log Frechet derivative vs independent dense eig/autograd",
+      "Preconditioner inverse square root vs dense eig and autograd finite-difference gradcheck",
+      "Batched independent Lanczos recurrence residual",
+      "Archived GP endpoints and history coverage"
+    ]
+  },
+  "plots": {
+    "figure1": "Regenerated from portable archived JSON; visually inspected",
+    "figure2": "Regenerated from archived JSON; visually inspected",
+    "table3": "CSV/TeX exported from exact archived initialization diagnostic"
+  },
+  "download": {
+    "dataset": "Protein",
+    "sha256": "f709d0107c3ee90ab019b9e5d77fc2ae182158958cb70b1903236a51334fd01b",
+    "verified": true
+  },
+  "output_sha256": {
+    "outputs/gp_training/clean_validation/protein_n4096_train_precon15_m40_p20_e120_protein_n4096_m40_p20_seed0.json": "78c2d838fae9c085425dbfb23ca4463dbe71b2961f370d4fc12f87c3ecf1fa78",
+    "outputs/gp_training/clean_validation/protein_first_iter_precon15_m40_p20_shared_init_protein_n4096_m40_p20_seed0.json": "d3a4b0cc771463134dec39e049293743a48a84855be032b5ad2aaf4a5b01c930",
+    "outputs/matrix_log/clean_validation/repo_forward_ours_vs_adjoint_n64_d2_p1_seed0_refdense.json": "7cfcd2fd14b4f9bce416f5e2f07c1543ca7b1b851f3c2a7ce1bc8b80c7194fa0",
+    "outputs/matrix_log/paper_size_validation_final_pins.json": "1955a3ba11997fa1df9786c2625a63e0bb983e2ccaf8eeb46de8f8d130868a51",
+    "outputs/gp_training/final_pins/protein_n4096_train_precon15_m40_p20_e120_protein_n4096_m40_p20_seed0.json": "2ad30dbd6daf7f75a6f94e2a5a93504fff6b5a12e45efaaf143b38cbfef42036",
+    "outputs/gp_training/final_pins/protein_first_iter_precon15_m40_p20_shared_init_protein_n4096_m40_p20_seed0.json": "cf1ea8d18b05f077998926984c48d379e6d0fad49b448c6ac558ea8c181c30cf"
+  },
+  "matrix_log_paper_size_newer_dependencies": {
+    "description": "Fresh paper-size runs using the archived dense value/gradient reference; no new dense eigendecomposition",
+    "config": {
+      "n": 15000,
+      "d": 2,
+      "depths": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        80,
+        100,
+        150,
+        200,
+        250,
+        300
+      ],
+      "num_probes": 1,
+      "seed": 0,
+      "jitter": 1e-06,
+      "reference": "dense",
+      "reference_depth": 300,
+      "dense_threshold": 2500,
+      "outdir": "gp_repo_forward_ours_vs_adjoint_outputs",
+      "row_block_size": 512,
+      "timing_repeats": 1,
+      "stable_log_divdiff": true,
+      "clip_ritz_to_gp_floor": false
+    },
+    "depths_rerun": [
+      60,
+      80
+    ],
+    "reference": {
+      "name": "dense eigendecomposition",
+      "value": -56371.49319805217,
+      "grad": {
+        "log_lengthscale": -872.9350245939546,
+        "log_outputscale": 228.81661166322306,
+        "log_noise": 29769.860283432077,
+        "mean": 0.0
+      },
+      "grad_l2_norm": 29783.534946241733
+    },
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "jax": "0.10.2",
+      "jaxlib": "0.10.2",
+      "matfree": "0.6.3"
+    },
+    "rows": [
+      {
+        "m": 60,
+        "reorthogonalization": "full",
+        "forward_value": -56371.4659968977,
+        "adjoint_forward_value": -56371.4659968977,
+        "forward_relative_error_to_archived_dense": 4.82533864721979e-07,
+        "forward_relative_difference_from_archived_run": 7.395805021563305e-14,
+        "runtime_sec": 18.255317875009496,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -874.4511728653608,
+            "log_outputscale": 229.0315202849396,
+            "log_noise": 29769.64538436718,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 5.191826455117535e-05,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 3.019133735613893e-13
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -873.4332355103295,
+            "log_outputscale": 229.03152027739327,
+            "log_noise": 29769.645384367188,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 1.9594502677533488e-05,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 5.563066743187258e-13
+        }
+      },
+      {
+        "m": 60,
+        "reorthogonalization": "none",
+        "forward_value": -56362.86468180949,
+        "adjoint_forward_value": -56362.86468180949,
+        "forward_relative_error_to_archived_dense": 0.00015306524190098037,
+        "forward_relative_difference_from_archived_run": 3.051565330630087e-05,
+        "runtime_sec": 34.024211042007664,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -1059.297705787684,
+            "log_outputscale": 260.8905451556499,
+            "log_noise": 29737.790028501833,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.006439891395770871,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0010856417728022708
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -1045.992431640625,
+            "log_outputscale": 300.3144721984863,
+            "log_noise": 29737.78961051224,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.006378421535620393,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.002935599313851311
+        }
+      },
+      {
+        "m": 80,
+        "reorthogonalization": "full",
+        "forward_value": -56371.49319727175,
+        "adjoint_forward_value": -56371.49319727175,
+        "forward_relative_error_to_archived_dense": 1.3844217518869634e-11,
+        "forward_relative_difference_from_archived_run": 1.2519943122775769e-14,
+        "runtime_sec": 24.341732917004265,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -872.9344218189887,
+            "log_outputscale": 228.81662508772274,
+            "log_noise": 29769.860270009576,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 2.0248564439081857e-08,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 5.02571102614766e-14
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -872.9351387841234,
+            "log_outputscale": 228.8166250911937,
+            "log_noise": 29769.86027000956,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 3.8866374754672745e-09,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 3.8662817242225424e-13
+        }
+      },
+      {
+        "m": 80,
+        "reorthogonalization": "none",
+        "forward_value": -56369.12382236177,
+        "adjoint_forward_value": -56369.12382236177,
+        "forward_relative_error_to_archived_dense": 4.203145164309704e-05,
+        "forward_relative_difference_from_archived_run": 1.3979302665698788e-05,
+        "runtime_sec": 58.598633624991635,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -950.1103997355638,
+            "log_outputscale": 239.56189266746796,
+            "log_noise": 29759.114453745096,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.002640966236585177,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.000577284841483435
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": null,
+            "log_outputscale": null,
+            "log_noise": null,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": null,
+          "difference_from_archived_gradient_normalized_by_dense_norm": null
+        }
+      }
+    ],
+    "interpretation": "Full-reorthogonalization selected points agree closely; unreorthogonalized finite-depth results differ with newer Matfree/JAX, and m80 no-reorth adjoint became nonfinite. Retained as explicit dependency-sensitivity evidence."
+  },
+  "matrix_log_paper_size_source_environment": {
+    "description": "Fresh paper-size runs using the archived dense value/gradient reference; no new dense eigendecomposition",
+    "config": {
+      "n": 15000,
+      "d": 2,
+      "depths": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        80,
+        100,
+        150,
+        200,
+        250,
+        300
+      ],
+      "num_probes": 1,
+      "seed": 0,
+      "jitter": 1e-06,
+      "reference": "dense",
+      "reference_depth": 300,
+      "dense_threshold": 2500,
+      "outdir": "gp_repo_forward_ours_vs_adjoint_outputs",
+      "row_block_size": 512,
+      "timing_repeats": 1,
+      "stable_log_divdiff": true,
+      "clip_ritz_to_gp_floor": false
+    },
+    "depths_rerun": [
+      60,
+      80
+    ],
+    "reorthogonalization_modes_rerun": [
+      "none"
+    ],
+    "reference": {
+      "name": "dense eigendecomposition",
+      "value": -56371.49319805217,
+      "grad": {
+        "log_lengthscale": -872.9350245939546,
+        "log_outputscale": 228.81661166322306,
+        "log_noise": 29769.860283432077,
+        "mean": 0.0
+      },
+      "grad_l2_norm": 29783.534946241733
+    },
+    "versions": {
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "jax": "0.10.0",
+      "jaxlib": "0.10.0",
+      "matfree": "0.5.5"
+    },
+    "rows": [
+      {
+        "m": 60,
+        "reorthogonalization": "none",
+        "forward_value": -56361.1447846553,
+        "adjoint_forward_value": -56361.1447846553,
+        "forward_relative_error_to_archived_dense": 0.00018357529328727568,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 63.0784919160069,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -1090.7499618026145,
+            "log_outputscale": 266.19112613451813,
+            "log_noise": 29732.48313344119,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.007525523183639656,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -968.1587476730347,
+            "log_outputscale": 260.8404541015625,
+            "log_noise": 29732.482453093202,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.0035990451077941086,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        }
+      },
+      {
+        "m": 80,
+        "reorthogonalization": "none",
+        "forward_value": -56368.33583233441,
+        "adjoint_forward_value": -56368.33583233441,
+        "forward_relative_error_to_archived_dense": 5.6009971328454327e-05,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 51.01542154198978,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -966.7871514966233,
+            "log_outputscale": 242.51945214961592,
+            "log_noise": 29756.155045427022,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.0032176256334304045,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -2144.5017874240875,
+            "log_outputscale": 278.35968017578125,
+            "log_noise": 29756.143054369113,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.042728490198562126,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        }
+      }
+    ],
+    "interpretation": "Both selected unreorthogonalized forwards and all projected/adjoint coordinates exactly reproduce the archived results. This observation motivates release pins JAX/jaxlib0.10.0 and Matfree0.5.5; it does not establish historical version metadata."
+  },
+  "matrix_log_release_dependency_decision": {
+    "jax": "0.10.0",
+    "jaxlib": "0.10.0",
+    "matfree": "0.5.5",
+    "evidence": "Selected n15000 no-reorth depth60/80 runs reproduced archived forwards and both gradients exactly; newer dependencies changed them. Full-reorth selected checks with newer versions differed only at about1e-13 in normalized gradients."
+  },
+  "final_pinned_environment": {
+    "python": "3.11.14",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "matplotlib": "3.11.2",
+      "jax": "0.10.0",
+      "jaxlib": "0.10.0",
+      "matfree": "0.5.5",
+      "torch": "2.14.1",
+      "gpytorch": "1.15.2",
+      "linear_operator": "0.6.1"
+    }
+  },
+  "final_pinned_gp_training_comparison": {
+    "gpytorch": {
+      "epochs": 120,
+      "final_loss": 0.25441471800796595,
+      "final_rmse": 0.7446171847951735,
+      "compared_numeric_fields": 766,
+      "max_absolute_difference_excluding_timings": 0
+    },
+    "ours_no_reorth": {
+      "epochs": 120,
+      "final_loss": 1.081379280070327,
+      "final_rmse": 0.6887978068780842,
+      "compared_numeric_fields": 1006,
+      "max_absolute_difference_excluding_timings": 0
+    }
+  },
+  "final_pinned_gp_diagnostic_comparison": {
+    "gpytorch_preconditioned": {
+      "absolute_differences": {
+        "logdet": 0.0,
+        "logdet_rel_error_to_dense": 0.0,
+        "grad_rel_error_to_dense": 0.0,
+        "per_parameter:model.likelihood.noise_covar.raw_noise": 0.0,
+        "per_parameter:model.covar_module.raw_outputscale": 0.0,
+        "per_parameter:model.covar_module.base_kernel.raw_lengthscale": 0.0,
+        "per_parameter:model.mean_module.raw_constant": 0.0
+      }
+    },
+    "ours_no_reorth_preconditioned": {
+      "absolute_differences": {
+        "logdet": 0.0,
+        "logdet_rel_error_to_dense": 0.0,
+        "grad_rel_error_to_dense": 0.0,
+        "per_parameter:model.likelihood.noise_covar.raw_noise": 0.0,
+        "per_parameter:model.covar_module.raw_outputscale": 0.0,
+        "per_parameter:model.covar_module.base_kernel.raw_lengthscale": 0.0,
+        "per_parameter:model.mean_module.raw_constant": 0.0
+      }
+    }
+  },
+  "matrix_log_paper_size_final_pins": {
+    "description": "Fresh paper-size runs using the archived dense value/gradient reference; no new dense eigendecomposition",
+    "config": {
+      "n": 15000,
+      "d": 2,
+      "depths": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        80,
+        100,
+        150,
+        200,
+        250,
+        300
+      ],
+      "num_probes": 1,
+      "seed": 0,
+      "jitter": 1e-06,
+      "reference": "dense",
+      "reference_depth": 300,
+      "dense_threshold": 2500,
+      "outdir": "gp_repo_forward_ours_vs_adjoint_outputs",
+      "row_block_size": 512,
+      "timing_repeats": 1,
+      "stable_log_divdiff": true,
+      "clip_ritz_to_gp_floor": false
+    },
+    "depths_rerun": [
+      60,
+      80
+    ],
+    "reorthogonalization_modes_rerun": [
+      "full",
+      "none"
+    ],
+    "reference": {
+      "name": "dense eigendecomposition",
+      "value": -56371.49319805217,
+      "grad": {
+        "log_lengthscale": -872.9350245939546,
+        "log_outputscale": 228.81661166322306,
+        "log_noise": 29769.860283432077,
+        "mean": 0.0
+      },
+      "grad_l2_norm": 29783.534946241733
+    },
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "jax": "0.10.0",
+      "jaxlib": "0.10.0",
+      "matfree": "0.5.5"
+    },
+    "comparison_tolerance": 1e-10,
+    "check_requested": true,
+    "rows": [
+      {
+        "m": 60,
+        "reorthogonalization": "full",
+        "forward_value": -56371.46599689353,
+        "adjoint_forward_value": -56371.46599689353,
+        "forward_relative_error_to_archived_dense": 4.825339386799935e-07,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 18.841516667001997,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -874.4511728663747,
+            "log_outputscale": 229.03152028654466,
+            "log_noise": 29769.64538435839,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 5.19182646330549e-05,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -873.4332355241014,
+            "log_outputscale": 229.03152027461226,
+            "log_noise": 29769.645384358406,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 1.9594503146475996e-05,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "matches_archive_within_tolerance": true
+      },
+      {
+        "m": 60,
+        "reorthogonalization": "none",
+        "forward_value": -56361.1447846553,
+        "adjoint_forward_value": -56361.1447846553,
+        "forward_relative_error_to_archived_dense": 0.00018357529328727568,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 35.23117733300023,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -1090.7499618026145,
+            "log_outputscale": 266.19112613451813,
+            "log_noise": 29732.48313344119,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.007525523183639656,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -968.1587476730347,
+            "log_outputscale": 260.8404541015625,
+            "log_noise": 29732.482453093202,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.0035990451077941086,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "matches_archive_within_tolerance": true
+      },
+      {
+        "m": 80,
+        "reorthogonalization": "full",
+        "forward_value": -56371.49319727246,
+        "adjoint_forward_value": -56371.49319727246,
+        "forward_relative_error_to_archived_dense": 1.383169757574703e-11,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 21.284661166995647,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -872.9344218190583,
+            "log_outputscale": 228.81662508772513,
+            "log_noise": 29769.86027001107,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 2.0248560984854697e-08,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -872.9351387765215,
+            "log_outputscale": 228.8166250997076,
+            "log_noise": 29769.860270011086,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 3.8864129318244135e-09,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "matches_archive_within_tolerance": true
+      },
+      {
+        "m": 80,
+        "reorthogonalization": "none",
+        "forward_value": -56368.33583233441,
+        "adjoint_forward_value": -56368.33583233441,
+        "forward_relative_error_to_archived_dense": 5.6009971328454327e-05,
+        "forward_relative_difference_from_archived_run": 0.0,
+        "runtime_sec": 40.49828066700138,
+        "ours": {
+          "gradient": {
+            "log_lengthscale": -966.7871514966233,
+            "log_outputscale": 242.51945214961592,
+            "log_noise": 29756.155045427022,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.0032176256334304045,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "adjoint": {
+          "gradient": {
+            "log_lengthscale": -2144.5017874240875,
+            "log_outputscale": 278.35968017578125,
+            "log_noise": 29756.143054369113,
+            "mean": 0.0
+          },
+          "relative_error_to_archived_dense": 0.042728490198562126,
+          "difference_from_archived_gradient_normalized_by_dense_norm": 0.0
+        },
+        "matches_archive_within_tolerance": true
+      }
+    ],
+    "all_selected_cases_match_archive_within_tolerance": true,
+    "interpretation": "All four selected paper-size cases reproduced archived forward and both gradient coordinates exactly in the clean pinned environment. Dense-reference values were loaded from the archive; no new dense eigendecomposition was run."
+  },
+  "final_commands": [
+    "python experiments/matrix_log/validate_saved_reference.py --check --output outputs/matrix_log/paper_size_validation_final_pins.json",
+    "python scripts/run_experiment.py configs/gp_diagnostic_paper.json",
+    "python scripts/run_experiment.py configs/gp_training_paper.json"
+  ],
+  "final_command_notes": "Full GP output directories overridden to outputs/gp_training/final_pins; all numerical settings unchanged.",
+  "initial_clean_environment": {
+    "python": "3.11.14",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "matplotlib": "3.11.2",
+      "jax": "0.10.2",
+      "jaxlib": "0.10.2",
+      "matfree": "0.6.3",
+      "torch": "2.14.1",
+      "gpytorch": "1.15.2",
+      "linear_operator": "0.6.1"
+    }
+  }
+}

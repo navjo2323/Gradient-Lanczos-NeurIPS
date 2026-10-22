@@ -1,0 +1,200 @@
+{
+  "validated_utc": "2026-10-22T22:52:02.042362+00:00",
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 python -m experiments.affine_gpu.run --config configs/affine_gpu_m128_reconstructed.json --output results/reruns/affine_gpu_paper128_validation/m128.csv",
+  "scope": "Complete paper-sized n=32768,m=128,2samples,8Adamupdates,all5methods on MPS; 45 evaluations.",
+  "configuration_status": "Reconstructed historical settings: Ritz guard none and full reorthogonalization passes1 are explicit current defaults, not established original launch flags.",
+  "timing_scope": "Other release-validation jobs ran concurrently. New timings are diagnostic only; no timing agreement or speedup claim is made.",
+  "run_metadata": {
+    "started_utc": "2026-10-22T22:50:29.548428+00:00",
+    "config": {
+      "device": "mps",
+      "require_gpu": true,
+      "operator": "hadamard-clusters",
+      "n": 32768,
+      "samples": 2,
+      "sample_seed": 123,
+      "seed": 0,
+      "steps": 128,
+      "chebyshev_degree": 128,
+      "clusters": 128,
+      "condition": 10000000000.0,
+      "cluster_width": 1e-08,
+      "true_mass": 1e-06,
+      "true_scale": 1.0,
+      "true_alpha": 0.5,
+      "init_mass": 1e-05,
+      "init_scale": 5.0,
+      "init_alpha": 1.5,
+      "prior_mass": 1e-06,
+      "prior_scale": 1.0,
+      "prior_alpha": 0.5,
+      "prior_strength": 0.0001,
+      "logdet_scale": 1.0,
+      "mass_min": 1e-12,
+      "mass_max": 10.0,
+      "scale_min": 1e-06,
+      "scale_max": 10.0,
+      "alpha_min": 0.05,
+      "alpha_max": 2.0,
+      "iterations": 8,
+      "learning_rate": 0.02,
+      "ritz_guard": "none",
+      "full_reorth_passes": 1,
+      "beta_breakdown_tolerance": 1e-30,
+      "methods": "exact,full,no,projected,chebyshev",
+      "csv": "results/reruns/affine_gpu_paper128_validation/m128.csv"
+    },
+    "configuration_source": "affine_gpu_m128_reconstructed.json",
+    "actual_device": "mps",
+    "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "numpy": "2.4.6",
+    "torch": "2.14.1",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "torch_threads": 1,
+    "mps_available": true,
+    "cuda_available": false,
+    "environment": {
+      "PYTORCH_ENABLE_MPS_FALLBACK": null,
+      "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+      "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "status": "completed",
+    "historical_reproduction": "Reconstructed settings; see docs/affine_gpu.md.",
+    "finished_utc": "2026-10-22T22:51:06.602122+00:00"
+  },
+  "raw_validation_csv": "results/validation/affine_m128.csv",
+  "raw_validation_sha256": "f91f89421470c5ac922ee85d1b8a15c4016774c0caafbd4bc12b59a93544992b",
+  "archived_csv_sha256": "971c1565467e2cc72e6cad2a955de51d2c7cb13ee79151925f752c251c230051",
+  "checks": {
+    "all45rows_finite": true,
+    "allmethods_iterations0through8": true,
+    "max_reference_absolute_difference": 0.0,
+    "max_error_metric_absolute_difference": 0.0,
+    "max_adam_parameter_difference": 0.0,
+    "projected_max_scaled_gradient_error_below_1e_4": true,
+    "projected_max_scaled_value_error_below_1e_4": true,
+    "projected_final_scale_relative_error_to_spectral_reference": 6.905849406854916e-06,
+    "projected_all_endpoint_parameters_match_reference_rtol1e_4": true
+  },
+  "methods": {
+    "exact": {
+      "evaluations": 9,
+      "max_scaled_gradient_error": 0.0,
+      "archived_max_scaled_gradient_error": 0.0,
+      "max_scaled_data_value_error": 0.0,
+      "archived_max_scaled_data_value_error": 0.0,
+      "endpoint": {
+        "mass": 1.1729428757781309e-05,
+        "scale": 5.528804620785319,
+        "alpha": 1.3400750646940056
+      },
+      "archived_endpoint": {
+        "mass": 1.1729428757781309e-05,
+        "scale": 5.528804620785319,
+        "alpha": 1.3400750646940056
+      },
+      "max_trajectory_absolute_difference_from_archive": {
+        "mass": 0.0,
+        "scale": 0.0,
+        "alpha": 0.0
+      },
+      "mean_data_evaluation_seconds_diagnostic_only": 0.0
+    },
+    "full": {
+      "evaluations": 9,
+      "max_scaled_gradient_error": 2.655684585790121e-06,
+      "archived_max_scaled_gradient_error": 2.7180537411815523e-06,
+      "max_scaled_data_value_error": 3.949970676623868e-06,
+      "archived_max_scaled_data_value_error": 4.0554599469407035e-06,
+      "endpoint": {
+        "mass": 1.1729428620902104e-05,
+        "scale": 5.528832616118432,
+        "alpha": 1.3400750563798984
+      },
+      "archived_endpoint": {
+        "mass": 1.1729428621553197e-05,
+        "scale": 5.528832434837227,
+        "alpha": 1.340075056405686
+      },
+      "max_trajectory_absolute_difference_from_archive": {
+        "mass": 6.510922036977521e-16,
+        "scale": 2.0090049979160085e-07,
+        "alpha": 3.586642094433046e-11
+      },
+      "mean_data_evaluation_seconds_diagnostic_only": 1.964790536997801
+    },
+    "no": {
+      "evaluations": 9,
+      "max_scaled_gradient_error": 3.634417928708211e-06,
+      "archived_max_scaled_gradient_error": 5.095036656273948e-06,
+      "max_scaled_data_value_error": 5.6706603525719284e-06,
+      "archived_max_scaled_data_value_error": 5.211116231169818e-06,
+      "endpoint": {
+        "mass": 1.1729428589504028e-05,
+        "scale": 5.52884608402006,
+        "alpha": 1.3400750535778085
+      },
+      "archived_endpoint": {
+        "mass": 1.1729428535306584e-05,
+        "scale": 5.528840111053922,
+        "alpha": 1.3400750502283785
+      },
+      "max_trajectory_absolute_difference_from_archive": {
+        "mass": 5.4197443787647875e-14,
+        "scale": 5.600718813081329e-05,
+        "alpha": 3.3494300666347954e-09
+      },
+      "mean_data_evaluation_seconds_diagnostic_only": 0.9220919306648688
+    },
+    "projected": {
+      "evaluations": 9,
+      "max_scaled_gradient_error": 3.7398326252254893e-06,
+      "archived_max_scaled_gradient_error": 3.7490642217313396e-06,
+      "max_scaled_data_value_error": 5.85842595989289e-06,
+      "archived_max_scaled_data_value_error": 5.731036744364552e-06,
+      "endpoint": {
+        "mass": 1.1729428580074918e-05,
+        "scale": 5.52884280187743,
+        "alpha": 1.3400750527445608
+      },
+      "archived_endpoint": {
+        "mass": 1.1729428580240977e-05,
+        "scale": 5.528842276162882,
+        "alpha": 1.3400750527351135
+      },
+      "max_trajectory_absolute_difference_from_archive": {
+        "mass": 1.6605911524331107e-16,
+        "scale": 5.257145483383852e-07,
+        "alpha": 9.447331805745307e-12
+      },
+      "mean_data_evaluation_seconds_diagnostic_only": 0.9342033843325529
+    },
+    "chebyshev": {
+      "evaluations": 9,
+      "max_scaled_gradient_error": 0.0008337466426340472,
+      "archived_max_scaled_gradient_error": 0.0008527605812208269,
+      "max_scaled_data_value_error": 0.0020774790479206728,
+      "archived_max_scaled_data_value_error": 0.0019866584189137115,
+      "endpoint": {
+        "mass": 1.1729416466018322e-05,
+        "scale": 5.528414513271668,
+        "alpha": 1.3400726348735563
+      },
+      "archived_endpoint": {
+        "mass": 1.172941646411955e-05,
+        "scale": 5.528414263105754,
+        "alpha": 1.3400728872351866
+      },
+      "max_trajectory_absolute_difference_from_archive": {
+        "mass": 1.8987717350033365e-15,
+        "scale": 8.166620668603741e-07,
+        "alpha": 2.523616302596565e-07
+      },
+      "mean_data_evaluation_seconds_diagnostic_only": 0.2564443193340493
+    }
+  },
+  "interpretation": "Projected and both AD methods retain small gradient errors at m128; all five trajectories complete. Floating-point values differ modestly from archived GPU records. The exact spectral trajectory agrees with the archive; historical GPU environment/settings remain unresolved."
+}

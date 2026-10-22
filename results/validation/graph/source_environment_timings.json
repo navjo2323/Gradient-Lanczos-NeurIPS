@@ -1,0 +1,678 @@
+{
+  "metadata": {
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "requested_threadpool_limit": 1,
+    "threadpools": [],
+    "thread_environment": {
+      "VECLIB_MAXIMUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    },
+    "configuration": {
+      "script": "experiments/graph/reproduce.py",
+      "args": [
+        "--mode",
+        "both"
+      ],
+      "description": "Regenerate graph accuracy and complete-call timings after downloading the SNAP graphs; compare fresh outputs with the frozen paper references.",
+      "graphs": [
+        "hepth",
+        "amazon"
+      ],
+      "objectives": [
+        "tn",
+        "sc"
+      ],
+      "accuracy_depths": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "timing_depths": [
+        16,
+        32
+      ],
+      "warmup_calls": 1,
+      "repeats": 3,
+      "recorded_match_tolerance": 5e-08,
+      "matrix": "raw_adj",
+      "theta": 0.0,
+      "time_scale": 1.0,
+      "precision": "float64",
+      "reorthogonalization": "none",
+      "breakdown_tolerance": 1e-14,
+      "starting_vectors": "two independent scalar recurrences from (e_i+e_j)/sqrt(2) and (e_i-e_j)/sqrt(2), in a two-column batch"
+    },
+    "graphs": [
+      "hepth",
+      "amazon"
+    ],
+    "reference_policy": "recompute",
+    "source_sha256": {
+      "experiments/graph/__init__.py": "592c95c8a69bc7a6d0aff05aa3ff1e123ac6d8bc79af78bb591deb2c0ba0c560",
+      "experiments/graph/_bootstrap.py": "b405b1b4ca78f175667c0fa7d3e649eeb4c7a8f45a3b50912a4ff7ac901bac16",
+      "experiments/graph/data.py": "1b93a3e1996624188d867fafd03bc5fcdb283ac5272545961ad762f1a7cf78f6",
+      "experiments/graph/implementation/benchmark_pkg_directions.py": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+      "experiments/graph/implementation/benchmark_pkg_graph_io.py": "899fbea84ee3399cc24007ab1acaf04049a1245c14e4408aa8958fdacafb9e7c",
+      "experiments/graph/implementation/benchmark_pkg_lanczos.py": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+      "experiments/graph/implementation/benchmark_pkg_references.py": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+      "experiments/graph/implementation/paper_benchmark.py": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+      "experiments/graph/reproduce.py": "63c615b4fcb7eb97a089eca66b72965cdf67c092d4d01606cf03d30d4c2a39b2",
+      "experiments/graph/run.py": "7d6395539b2215675b3a3b05075ea1cb294310da61667fa3f65427d6875ebb96"
+    }
+  },
+  "cases": [
+    {
+      "graph": "hepth",
+      "objective": "tn",
+      "depth": 16,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005279584001982585,
+            "historical_scope_seconds": 0.0049899570003617555,
+            "small_matrix_seconds": 0.00019545800751075149,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005267209009616636
+          },
+          "ko_seconds": 0.006263499992201105,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "complete_speedup": 1.1863624084490447,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005226374996709637,
+            "historical_scope_seconds": 0.0049595409946050495,
+            "small_matrix_seconds": 0.00018162501510232687,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005214082993916236
+          },
+          "ko_seconds": 0.006319541993434541,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "complete_speedup": 1.2091635210663467,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005205499997828156,
+            "historical_scope_seconds": 0.004961207989254035,
+            "small_matrix_seconds": 0.00016599999798927456,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005193166987737641
+          },
+          "ko_seconds": 0.006275666004512459,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "complete_speedup": 1.2055837109078473,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "hepth",
+      "objective": "tn",
+      "depth": 32,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.010274333006236702,
+            "historical_scope_seconds": 0.009845082997344434,
+            "small_matrix_seconds": 0.00031566701363772154,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010255750006763265
+          },
+          "ko_seconds": 0.017839874999481253,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "complete_speedup": 1.7363535899266778,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.011550750001333654,
+            "historical_scope_seconds": 0.010857374989427626,
+            "small_matrix_seconds": 0.0004180830001132563,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.011527374997967854
+          },
+          "ko_seconds": 0.021130624998477288,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "complete_speedup": 1.8293725512228676,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.010311125006410293,
+            "historical_scope_seconds": 0.00990879099117592,
+            "small_matrix_seconds": 0.00028404200566001236,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010293792001903057
+          },
+          "ko_seconds": 0.012848708996898495,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "complete_speedup": 1.2461015639816817,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "hepth",
+      "objective": "sc",
+      "depth": 16,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.0053884999942965806,
+            "historical_scope_seconds": 0.0049135820008814335,
+            "small_matrix_seconds": 0.00020000098447781056,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005375416993047111
+          },
+          "ko_seconds": 0.006680999998934567,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "complete_speedup": 1.2398626716165952,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.005456875005620532,
+            "historical_scope_seconds": 0.0049555420118849725,
+            "small_matrix_seconds": 0.00021566600480582565,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005443374990136363
+          },
+          "ko_seconds": 0.007055249996483326,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "complete_speedup": 1.2929103175748908,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.005291791007039137,
+            "historical_scope_seconds": 0.004883250003331341,
+            "small_matrix_seconds": 0.00014904201088938862,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005279958000755869
+          },
+          "ko_seconds": 0.006535667009302415,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "complete_speedup": 1.2350576582878414,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "hepth",
+      "objective": "sc",
+      "depth": 32,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.010284832998877391,
+            "historical_scope_seconds": 0.009632999994209968,
+            "small_matrix_seconds": 0.0003258330107200891,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.01026524999178946
+          },
+          "ko_seconds": 0.013297167010023259,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "complete_speedup": 1.2928909017263255,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.010813916989718564,
+            "historical_scope_seconds": 0.01011875001131557,
+            "small_matrix_seconds": 0.00038633300573565066,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010789416002808139
+          },
+          "ko_seconds": 0.020020416006445885,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "complete_speedup": 1.851356545965767,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.010653833000105806,
+            "historical_scope_seconds": 0.010013124003307894,
+            "small_matrix_seconds": 0.0003298330120742321,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010632667006575502
+          },
+          "ko_seconds": 0.012998000005609356,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "complete_speedup": 1.2200303876999263,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "amazon",
+      "objective": "tn",
+      "depth": 16,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.19468754099216312,
+            "historical_scope_seconds": 0.19296800000302028,
+            "small_matrix_seconds": 0.0004090000002179295,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.19466900000406895
+          },
+          "ko_seconds": 0.4414410840108758,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "complete_speedup": 2.267433661965279,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.18834154200158082,
+            "historical_scope_seconds": 0.18668366700876504,
+            "small_matrix_seconds": 0.00035704199399333447,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.1883185409969883
+          },
+          "ko_seconds": 0.42840779200196266,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "complete_speedup": 2.274632497159691,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.2036684589984361,
+            "historical_scope_seconds": 0.20153925000340678,
+            "small_matrix_seconds": 0.00037158299528528005,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.20364841699483804
+          },
+          "ko_seconds": 0.4769843749963911,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "complete_speedup": 2.341964864574606,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "amazon",
+      "objective": "tn",
+      "depth": 32,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.38898329201037996,
+            "historical_scope_seconds": 0.3870009159873007,
+            "small_matrix_seconds": 0.0005571250076172873,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.38895691600919235
+          },
+          "ko_seconds": 1.0687012080015847,
+          "ko_value": 2.697092990760135,
+          "ko_gradient": 163.08898571951556,
+          "complete_speedup": 2.747421881485508,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.4093764999997802,
+            "historical_scope_seconds": 0.40512470800604206,
+            "small_matrix_seconds": 0.0005046250007580966,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.40935183300462086
+          },
+          "ko_seconds": 1.077129249999416,
+          "ko_value": 2.697092990760135,
+          "ko_gradient": 163.08898571951556,
+          "complete_speedup": 2.6311457790078188,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.39937379100592807,
+            "historical_scope_seconds": 0.3972433750022901,
+            "small_matrix_seconds": 0.0005382920062402263,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.39934562498820014
+          },
+          "ko_seconds": 1.1548700419953093,
+          "ko_value": 2.697092990760135,
+          "ko_gradient": 163.08898571951556,
+          "complete_speedup": 2.8917021296927494,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "amazon",
+      "objective": "sc",
+      "depth": 16,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.18632483399414923,
+            "historical_scope_seconds": 0.1794287910015555,
+            "small_matrix_seconds": 0.0003105420037172735,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.18630595799186267
+          },
+          "ko_seconds": 0.47400249999191146,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "complete_speedup": 2.543957720669675,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.1846943749987986,
+            "historical_scope_seconds": 0.17823345900978893,
+            "small_matrix_seconds": 0.0003141250053886324,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.18467475000943523
+          },
+          "ko_seconds": 0.468222000010428,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "complete_speedup": 2.5351178129462455,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.2086139169987291,
+            "historical_scope_seconds": 0.20160329098871443,
+            "small_matrix_seconds": 0.0004837909946218133,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.208589416986797
+          },
+          "ko_seconds": 0.43990087498968933,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "complete_speedup": 2.1086842206810643,
+          "order": "ours,ko"
+        }
+      ]
+    },
+    {
+      "graph": "amazon",
+      "objective": "sc",
+      "depth": 32,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.39693112499662675,
+            "historical_scope_seconds": 0.3902958749968093,
+            "small_matrix_seconds": 0.00043962600466329604,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.3969062499963911
+          },
+          "ko_seconds": 1.1330014579871204,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.800522497820315,
+          "complete_speedup": 2.854403161245541,
+          "order": "ours,ko"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.39665304200025275,
+            "historical_scope_seconds": 0.3882526660017902,
+            "small_matrix_seconds": 0.0005214580014580861,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.39662608300568536
+          },
+          "ko_seconds": 1.1292900830012513,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.800522497820315,
+          "complete_speedup": 2.8470475791801233,
+          "order": "ko,ours"
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.4081017919961596,
+            "historical_scope_seconds": 0.4003712490084581,
+            "small_matrix_seconds": 0.0004422499914653599,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.408076332998462
+          },
+          "ko_seconds": 1.0928055410040542,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.800522497820315,
+          "complete_speedup": 2.6777768743890693,
+          "order": "ours,ko"
+        }
+      ]
+    }
+  ]
+}

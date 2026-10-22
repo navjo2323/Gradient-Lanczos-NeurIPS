@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "seed": 284,
+  "n": 12,
+  "depth": 10,
+  "tolerance": 1e-09,
+  "checks": [
+    {
+      "objective": "tn",
+      "errors": {
+        "ours_value": 5.551115123125783e-17,
+        "ours_gradient": 6.857204300555316e-16,
+        "ko_value": 8.326672684688674e-17,
+        "ko_gradient": 5.142903225416487e-16,
+        "sparse_reference_value": 5.551115123125783e-17,
+        "sparse_reference_gradient": 1.714301075138829e-16
+      },
+      "ko_kind": "modified_arnoldi"
+    },
+    {
+      "objective": "sc",
+      "errors": {
+        "ours_value": 5.551115123125783e-17,
+        "ours_gradient": 5.620504062164855e-16,
+        "ko_value": 1.1102230246251565e-16,
+        "ko_gradient": 2.0816681711721685e-17,
+        "sparse_reference_value": 5.551115123125783e-17,
+        "sparse_reference_gradient": 1.5959455978986625e-16
+      },
+      "ko_kind": "modified_arnoldi_swapped_start"
+    }
+  ]
+}

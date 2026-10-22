@@ -1,0 +1,66 @@
+{
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "requested_threadpool_limit": 1,
+  "threadpools": [],
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null
+  },
+  "configuration": {
+    "script": "experiments/graph/reproduce.py",
+    "args": [
+      "--mode",
+      "both"
+    ],
+    "description": "Regenerate graph accuracy and complete-call timings after downloading the SNAP graphs; compare fresh outputs with the frozen paper references.",
+    "graphs": [
+      "hepth",
+      "amazon"
+    ],
+    "objectives": [
+      "tn",
+      "sc"
+    ],
+    "accuracy_depths": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "timing_depths": [
+      16,
+      32
+    ],
+    "warmup_calls": 1,
+    "repeats": 3,
+    "recorded_match_tolerance": 5e-08,
+    "matrix": "raw_adj",
+    "theta": 0.0,
+    "time_scale": 1.0,
+    "precision": "float64",
+    "reorthogonalization": "none",
+    "breakdown_tolerance": 1e-14,
+    "starting_vectors": "two independent scalar recurrences from (e_i+e_j)/sqrt(2) and (e_i-e_j)/sqrt(2), in a two-column batch"
+  },
+  "graphs": [
+    "hepth",
+    "amazon"
+  ],
+  "reference_policy": "recompute",
+  "source_sha256": {
+    "experiments/graph/__init__.py": "592c95c8a69bc7a6d0aff05aa3ff1e123ac6d8bc79af78bb591deb2c0ba0c560",
+    "experiments/graph/_bootstrap.py": "b405b1b4ca78f175667c0fa7d3e649eeb4c7a8f45a3b50912a4ff7ac901bac16",
+    "experiments/graph/data.py": "1b93a3e1996624188d867fafd03bc5fcdb283ac5272545961ad762f1a7cf78f6",
+    "experiments/graph/implementation/benchmark_pkg_directions.py": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+    "experiments/graph/implementation/benchmark_pkg_graph_io.py": "899fbea84ee3399cc24007ab1acaf04049a1245c14e4408aa8958fdacafb9e7c",
+    "experiments/graph/implementation/benchmark_pkg_lanczos.py": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+    "experiments/graph/implementation/benchmark_pkg_references.py": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+    "experiments/graph/implementation/paper_benchmark.py": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+    "experiments/graph/reproduce.py": "63c615b4fcb7eb97a089eca66b72965cdf67c092d4d01606cf03d30d4c2a39b2",
+    "experiments/graph/run.py": "7d6395539b2215675b3a3b05075ea1cb294310da61667fa3f65427d6875ebb96"
+  }
+}
