@@ -1,0 +1,89 @@
+{
+  "source_collection": "Gradients-Lanczos/experiments-lanczos-adjoints",
+  "files": [
+    {
+      "source": "experiments/applications/gaussian_process/gp_repo_forward_ours_vs_adjoint.py",
+      "source_sha256": "f3f1ee5685103caa4440de5e5173334c1a0dde85323330682878ea924c8290c3",
+      "destination": "experiments/matrix_log/run.py",
+      "modifications": "Portability only: [('default=\"gp_repo_forward_ours_vs_adjoint_outputs\"', 'default=\"outputs/matrix_log\"')]; serialize nonfinite outputs as JSON null (no numerical change)",
+      "destination_sha256": "2bae23bb8578214ec41b6c10d93763afec543443888a8523360251f93bf890bc"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_repo_forward_ours_vs_adjoint_outputs/plot_gradient_comparison_style_final_notitle.py",
+      "source_sha256": "3f0df66ef8c4ef9cbc0e6d19b031fadd8638a67b5592fdd116bc8f51987bddeb",
+      "destination": "experiments/matrix_log/plot.py",
+      "modifications": "Create output parent directory before saving; plotting calculations unchanged.",
+      "destination_sha256": "b91a41be3e1af76400fc1b4c887406e2468884b63f1b1491a994d39137bd3d8e"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_repo_forward_ours_vs_adjoint_outputs/repo_forward_ours_vs_adjoint_n15000_d2_p1_seed0_refdense.json",
+      "source_sha256": "18fac3d6d0d686280a3f5b49bdf3d6d523680464bbc12d64114a6e87eff46972",
+      "destination": "results/paper/matrix_log/results.json",
+      "modifications": "Replace nonfinite NaN tokens with JSON null; original bytes retained in results.original.json.raw. Failed adjoint points remain absent in plots.",
+      "destination_sha256": "a6ac0ae5108173b74f1680d11e64e129711e4f7975576cd1067bec3bf553140b"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_repo_forward_ours_vs_adjoint_outputs/repo_forward_ours_vs_adjoint_n15000_d2_p1_seed0_refdense_gradient_comparison_notitle.png",
+      "source_sha256": "ae39cec3c2eed6b1cf06a3b4b505db132306baa8499de2ab238d85c0054ead3b",
+      "destination": "results/paper/matrix_log/figure1_original.png",
+      "modifications": "None; byte-for-byte copy",
+      "destination_sha256": "ae39cec3c2eed6b1cf06a3b4b505db132306baa8499de2ab238d85c0054ead3b"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/train/gp_train_torch_native_logdet.py",
+      "source_sha256": "9846962d8de6b9db3514982b0eda22b945acb6469312ac6981fc926855bceca3",
+      "destination": "experiments/gp_training/train.py",
+      "modifications": "Portability only: [('import os\\n', 'import os\\nimport tempfile\\n'), ('pathlib.Path(\"/private/tmp\") / \"matplotlib_codex_cache\"', 'pathlib.Path(tempfile.gettempdir()) / \"lanczos_matplotlib_cache\"'), ('GAUSSIAN_PROCESS_DIR = pathlib.Path(__file__).resolve().parents[1]', 'GAUSSIAN_PROCESS_DIR = pathlib.Path(__file__).resolve().parent'), ('from gp_compare_gpytorch_logdet_v8b_fast_keops import', 'from common import'), ('default=GAUSSIAN_PROCESS_DIR / \"gp_logdet_case_study_outputs\"', 'default=pathlib.Path(\"outputs/gp_training\")')]",
+      "destination_sha256": "3a33aa21f693d493ab5f49981ed222781606d031000b9709f0bb3c842277bedf"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/train/gp_first_iter_logdet_gradient_diagnostic.py",
+      "source_sha256": "6b521983451149eb574cc156565a4632693443460225a02890df534ba9cce9e8",
+      "destination": "experiments/gp_training/diagnostic.py",
+      "modifications": "Portability only: [('import os\\n', 'import os\\nimport tempfile\\n'), ('pathlib.Path(\"/private/tmp\") / \"matplotlib_codex_cache\"', 'pathlib.Path(tempfile.gettempdir()) / \"lanczos_matplotlib_cache\"'), ('GAUSSIAN_PROCESS_DIR = pathlib.Path(__file__).resolve().parents[1]', 'GAUSSIAN_PROCESS_DIR = pathlib.Path(__file__).resolve().parent'), ('from gp_compare_gpytorch_logdet_v8b_fast_keops import', 'from common import'), ('default=GAUSSIAN_PROCESS_DIR / \"gp_logdet_case_study_outputs\"', 'default=pathlib.Path(\"outputs/gp_training\")'), ('from gp_train_torch_native_logdet import', 'from train import')]",
+      "destination_sha256": "6ba96129dd86dffded8425da420cd1fccf0485005d3c35de4d259971c8a904a5"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_logdet_case_study_outputs/protein_n4096_train_precon15_m40_p20_e120_protein_n4096_m40_p20_seed0.json",
+      "source_sha256": "c40778c4f01d4eaba35917c7e08b1639fc33c6b64adb31de8f8e6a78a902cca7",
+      "destination": "results/paper/gp_training/training.json",
+      "modifications": "None; byte-for-byte copy",
+      "destination_sha256": "c40778c4f01d4eaba35917c7e08b1639fc33c6b64adb31de8f8e6a78a902cca7"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_logdet_case_study_outputs/protein_first_iter_precon15_m40_p20_shared_init_protein_n4096_m40_p20_seed0.json",
+      "source_sha256": "f7c78ef25cdcdecca74722aa472d4c2c104b03463e2a88dd4a0660b00f60f360",
+      "destination": "results/paper/gp_training/diagnostic.json",
+      "modifications": "None; byte-for-byte copy",
+      "destination_sha256": "f7c78ef25cdcdecca74722aa472d4c2c104b03463e2a88dd4a0660b00f60f360"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_logdet_case_study_outputs/protein_n4096_train_precon15_m40_p20_e120_protein_n4096_m40_p20_seed0_loss_rmse.png",
+      "source_sha256": "04c3540eeea2ff1b698bf1b6b697194d898400b84da975d0de337f560c43c1b9",
+      "destination": "results/paper/gp_training/figure2_original.png",
+      "modifications": "None; byte-for-byte copy",
+      "destination_sha256": "04c3540eeea2ff1b698bf1b6b697194d898400b84da975d0de337f560c43c1b9"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_compare_gpytorch_logdet_v8b_fast_keops.py",
+      "source_sha256": "168572992f528bdba4f0f5532ede12bdc69999e1b645f814673760b504fd0e4b",
+      "destination": "experiments/gp_training/common.py",
+      "modifications": "Extract only Config, make_toy_regression, _canonical_dataset_name, _standardize_regression_data, make_regression_data, _reset_gpytorch_probe_cache, _torch_dtype_from_name unchanged; replace data acquisition with pinned downloader; remove unused datasets and experiment backends.",
+      "destination_sha256": "eeb7661e9927cd5ab6eb901d59f1c5a09e946b043c3046a71adf54701c7af767"
+    },
+    {
+      "source": "LICENSE",
+      "source_sha256": "aa1e84663c4133bb15a41f64b1e5a21c9a54693f995384fb0214c847cea23a3d",
+      "destination": "third_party/matfree_extensions/LICENSE",
+      "modifications": "None; byte-for-byte copy",
+      "destination_sha256": "aa1e84663c4133bb15a41f64b1e5a21c9a54693f995384fb0214c847cea23a3d"
+    },
+    {
+      "source": "experiments/applications/gaussian_process/gp_repo_forward_ours_vs_adjoint_outputs/repo_forward_ours_vs_adjoint_n15000_d2_p1_seed0_refdense.json",
+      "destination": "results/paper/matrix_log/results.original.json.raw",
+      "source_sha256": "18fac3d6d0d686280a3f5b49bdf3d6d523680464bbc12d64114a6e87eff46972",
+      "modifications": "None; byte-for-byte original JSON containing NaN extension tokens",
+      "destination_sha256": "18fac3d6d0d686280a3f5b49bdf3d6d523680464bbc12d64114a6e87eff46972"
+    }
+  ]
+}

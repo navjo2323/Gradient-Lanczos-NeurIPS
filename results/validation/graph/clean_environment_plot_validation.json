@@ -1,0 +1,12 @@
+{
+  "source": "frozen paper records",
+  "timing_cases": 8,
+  "accuracy_cases": 16,
+  "paper_table4_display_match": true,
+  "error_definition": "abs(estimate-reference)/max(1,abs(reference)) for both value and sensitivity",
+  "figures": [
+    "figure3_graph_speedup",
+    "figure4_graph_sensitivity",
+    "figure5_graph_value"
+  ]
+}

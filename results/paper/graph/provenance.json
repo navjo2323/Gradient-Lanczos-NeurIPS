@@ -1,0 +1,164 @@
+{
+  "sources": [
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "benchmark_pkg_lanczos.py",
+      "original_sha256": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+      "destination": "experiments/graph/implementation/benchmark_pkg_lanczos.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "benchmark_pkg_directions.py",
+      "original_sha256": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+      "destination": "experiments/graph/implementation/benchmark_pkg_directions.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "benchmark_pkg_graph_io.py",
+      "original_sha256": "899fbea84ee3399cc24007ab1acaf04049a1245c14e4408aa8958fdacafb9e7c",
+      "destination": "experiments/graph/implementation/benchmark_pkg_graph_io.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "benchmark_pkg_references.py",
+      "original_sha256": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+      "destination": "experiments/graph/implementation/benchmark_pkg_references.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "paper_benchmark.py",
+      "original_sha256": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+      "destination": "experiments/graph/implementation/paper_benchmark.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "fAb-frechet/lib.py",
+      "original_sha256": "77446af111719f63f6db12de742d7ca503d14dca561008128e0ff8a28862fe00",
+      "destination": "third_party/fAb-frechet/lib.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "fAb-frechet/LICENSE",
+      "original_sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "destination": "third_party/fAb-frechet/LICENSE",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_hepth_tn.csv",
+      "original_sha256": "c1a4992e95a0f93ce649dd8c75a0854ad2d928619ea455cd9b026ac69290d177",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_hepth_tn.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_hepth_sc.csv",
+      "original_sha256": "b8ea2da583c847108f1f4d1b8c6f0e7a364c500db75b0d16625aef13b9aac1c2",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_hepth_sc.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_amazon_tn.csv",
+      "original_sha256": "96c06ca1761f26883b42ca51f232a7d579f6703afaad61f7cbf8bbdece952535",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_amazon_tn.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_amazon_sc.csv",
+      "original_sha256": "4bdd77896f96a08178707fdc7fd2d6856149c12069c5d17cfd5db43f764ba46d",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_amazon_sc.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_r3_hepth_tn.csv",
+      "original_sha256": "9f41b7c34cbe6c4b07f23e5767d441417a92ce865806324769deab8fc13bf777",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_r3_hepth_tn.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_r3_hepth_sc.csv",
+      "original_sha256": "36dde513d77e555c8c086956ce5d2378185088e7827843b6144d7595b90b6d21",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_r3_hepth_sc.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_r3_amazon_tn.csv",
+      "original_sha256": "0d44fcb91ebdac7f02f013ee7db1df441df3333d655df810352b146685165c15",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_r3_amazon_tn.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "Graph-estrada-benchmark",
+      "source_relative_path": "results_paper_batched_safe_r3_amazon_sc.csv",
+      "original_sha256": "be4d3fc7d952c3ff92b8a86f0b0526269186dc4805702c3edb6a2c27fd0f6222",
+      "destination": "results/paper/graph/accuracy/results_paper_batched_safe_r3_amazon_sc.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "fresh_timing_results.json",
+      "original_sha256": "bdac2a653de61b2f22dc578497a556bc7314b644f9da26662c7b6ac9ea299add",
+      "destination": "results/paper/graph/timing_source/fresh_timing_results.json",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "audit_graph_timing.py",
+      "original_sha256": "5a0301cc0d5771a0bbd723a7e34b10800c41f926b22a03ded07eb85cebb8a999",
+      "destination": "results/paper/graph/timing_source/audit_graph_timing.py",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "paper_handoff/graph_timings_summary.csv",
+      "original_sha256": "d84dd6218ee55710d79eff06f4be09710c8e3d32159b35592d6c61291763ba8b",
+      "destination": "results/paper/graph/graph_timings_summary.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "paper_handoff/graph_timings_raw.csv",
+      "original_sha256": "b314878b9d1a226b00c6463584c42ff35b07121fbfd5ff72b7a41eefea228027",
+      "destination": "results/paper/graph/graph_timings_raw.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "paper_handoff/graph_recorded_references.csv",
+      "original_sha256": "8bc8061efe80e78287dd34f7d1a88f41296e50a4520b12b1df3bc743e015ee57",
+      "destination": "results/paper/graph/graph_recorded_references.csv",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "paper_handoff/run_metadata.json",
+      "original_sha256": "34f274c2cca10edfa5a24dc3830b3b7276998695f5b21c9e4ae65a99bfd92693",
+      "destination": "results/paper/graph/run_metadata.json",
+      "changes": "none"
+    },
+    {
+      "source_collection": "graph_timing_audit",
+      "source_relative_path": "audit_graph_timing.py",
+      "original_sha256": "5a0301cc0d5771a0bbd723a7e34b10800c41f926b22a03ded07eb85cebb8a999",
+      "destination": "experiments/graph/run.py",
+      "changes": "Preserved evaluate_complete, measure_ours, measure_ko bodies; portable imports, CLI, configuration, dataset verification, reference checks, output locations and smoke oracle added."
+    }
+  ],
+  "release_notes": {
+    "license_original": "MIT",
+    "license_baseline": "GPL-2.0 (preserved upstream license)",
+    "timings": "Use corrected outer-call timing records only. Historical accuracy CSV timer fields omit work and are not used for speedups.",
+    "paper_error_labels": "Final Table 1 powers of ten are transcribed separately; exact numerical errors retained."
+  }
+}

@@ -1,0 +1,1433 @@
+{
+  "config": {
+    "n": 15000,
+    "d": 2,
+    "depths": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      80,
+      100,
+      150,
+      200,
+      250,
+      300
+    ],
+    "num_probes": 1,
+    "seed": 0,
+    "jitter": 1e-06,
+    "reference": "dense",
+    "reference_depth": 300,
+    "dense_threshold": 2500,
+    "outdir": "gp_repo_forward_ours_vs_adjoint_outputs",
+    "row_block_size": 512,
+    "timing_repeats": 1,
+    "stable_log_divdiff": true,
+    "clip_ritz_to_gp_floor": false
+  },
+  "reference": {
+    "name": "dense eigendecomposition",
+    "value": -56371.49319805217,
+    "grad": {
+      "log_lengthscale": -872.9350245939546,
+      "log_outputscale": 228.81661166322306,
+      "log_noise": 29769.860283432077,
+      "mean": 0.0
+    },
+    "grad_l2_norm": 29783.534946241733
+  },
+  "rows": [
+    {
+      "m": 10,
+      "forward": {
+        "full": {
+          "value": -52502.48536471098,
+          "rel_error": 0.0686341200817239,
+          "adjoint_forward_value": -52502.48536471098,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -52502.48536471492,
+          "rel_error": 0.06863412008165394,
+          "adjoint_forward_value": -52502.48536471492,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -17617.888440299095,
+            "log_outputscale": 7287.120409686089,
+            "log_noise": 22711.870173863696,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.6545333071687054,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -6362.767229527375,
+            "log_outputscale": 7287.12040968213,
+            "log_noise": 22711.870173863637,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.3824865389001917,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -17617.888370092416,
+            "log_outputscale": 7287.120409549666,
+            "log_noise": 22711.870173869713,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.6545333051421924,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -6362.767229517483,
+            "log_outputscale": 7287.1204096274905,
+            "log_noise": 22711.870173869953,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.3824865388987636,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 2.2072283340385184,
+            "min_sec": 2.2072283340385184,
+            "max_sec": 2.2072283340385184,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7971412499900907,
+            "min_sec": 0.7971412499900907,
+            "max_sec": 0.7971412499900907,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 3.004369584028609,
+            "min_sec": 3.004369584028609,
+            "max_sec": 3.004369584028609,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 4.471134416060522,
+            "min_sec": 4.471134416060522,
+            "max_sec": 4.471134416060522,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 2.4939895829884335,
+            "min_sec": 2.4939895829884335,
+            "max_sec": 2.4939895829884335,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.4640932079637423,
+            "min_sec": 0.4640932079637423,
+            "max_sec": 0.4640932079637423,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 2.958082790952176,
+            "min_sec": 2.958082790952176,
+            "max_sec": 2.958082790952176,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 6.450616999994963,
+            "min_sec": 6.450616999994963,
+            "max_sec": 6.450616999994963,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 20,
+      "forward": {
+        "full": {
+          "value": -55918.44208162793,
+          "rel_error": 0.008036883373525682,
+          "adjoint_forward_value": -55918.44208162793,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -55784.88832529698,
+          "rel_error": 0.01040605525019974,
+          "adjoint_forward_value": -55784.88832529698,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -5259.257910231306,
+            "log_outputscale": 1282.2057623155238,
+            "log_noise": 28716.5179480056,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.15553508422966633,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -3904.8539907683466,
+            "log_outputscale": 1282.205762321219,
+            "log_noise": 28716.5179480056,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.11342238293549996,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -6378.900646696448,
+            "log_outputscale": 1556.7589164547833,
+            "log_noise": 28441.961615070057,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.19532343571238459,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -3669.402224196016,
+            "log_outputscale": 1555.4588476631861,
+            "log_noise": 28441.96158657196,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.11308310978237344,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 2.7159038330428302,
+            "min_sec": 2.7159038330428302,
+            "max_sec": 2.7159038330428302,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.612948750029318,
+            "min_sec": 0.612948750029318,
+            "max_sec": 0.612948750029318,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 3.3288525830721483,
+            "min_sec": 3.3288525830721483,
+            "max_sec": 3.3288525830721483,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 7.571303833974525,
+            "min_sec": 7.571303833974525,
+            "max_sec": 7.571303833974525,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 4.655285499989986,
+            "min_sec": 4.655285499989986,
+            "max_sec": 4.655285499989986,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.4599852920509875,
+            "min_sec": 0.4599852920509875,
+            "max_sec": 0.4599852920509875,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 5.115270792040974,
+            "min_sec": 5.115270792040974,
+            "max_sec": 5.115270792040974,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 11.775744332931936,
+            "min_sec": 11.775744332931936,
+            "max_sec": 11.775744332931936,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 30,
+      "forward": {
+        "full": {
+          "value": -56306.68169500019,
+          "rel_error": 0.0011497212398521909,
+          "adjoint_forward_value": -56306.68169500019,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56186.22875356094,
+          "rel_error": 0.003286491699631453,
+          "adjoint_forward_value": -56186.22875356094,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -1853.601428360102,
+            "log_outputscale": 414.37697011486756,
+            "log_noise": 29584.3081717451,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.0340849184365799,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -1595.425160394011,
+            "log_outputscale": 414.3769701274323,
+            "log_noise": 29584.308171745084,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.025808569427335882,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -3078.2970707854925,
+            "log_outputscale": 702.102573390488,
+            "log_noise": 29296.58609166516,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.07738144590878264,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -2114.0860938009923,
+            "log_outputscale": 702.2782626442618,
+            "log_noise": 29296.586094720926,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.04734766954067248,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 3.699619209044613,
+            "min_sec": 3.699619209044613,
+            "max_sec": 3.699619209044613,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.6055921670049429,
+            "min_sec": 0.6055921670049429,
+            "max_sec": 0.6055921670049429,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 4.305211376049556,
+            "min_sec": 4.305211376049556,
+            "max_sec": 4.305211376049556,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 10.391470875008963,
+            "min_sec": 10.391470875008963,
+            "max_sec": 10.391470875008963,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 6.946246332954615,
+            "min_sec": 6.946246332954615,
+            "max_sec": 6.946246332954615,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.5024606250226498,
+            "min_sec": 0.5024606250226498,
+            "max_sec": 0.5024606250226498,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 7.448706957977265,
+            "min_sec": 7.448706957977265,
+            "max_sec": 7.448706957977265,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 17.64497887494508,
+            "min_sec": 17.64497887494508,
+            "max_sec": 17.64497887494508,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 40,
+      "forward": {
+        "full": {
+          "value": -56364.41365413808,
+          "rel_error": 0.0001255873050802486,
+          "adjoint_forward_value": -56364.41365413808,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56299.19026324324,
+          "rel_error": 0.001282615213950575,
+          "adjoint_forward_value": -56299.19026324324,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -1034.4655168509478,
+            "log_outputscale": 255.96268138474522,
+            "log_noise": 29742.715420153585,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.005574545608888117,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -927.2183545830267,
+            "log_outputscale": 255.9626813763134,
+            "log_noise": 29742.71542015351,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.0022323184333010266,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -1937.7605968565147,
+            "log_outputscale": 433.3431980273045,
+            "log_noise": 29565.324646659457,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.037047739309422345,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -1225.6778182983398,
+            "log_outputscale": 433.8526816368103,
+            "log_noise": 29565.32532082955,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.015323934595121965,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 5.00189183303155,
+            "min_sec": 5.00189183303155,
+            "max_sec": 5.00189183303155,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.6870209589833394,
+            "min_sec": 0.6870209589833394,
+            "max_sec": 0.6870209589833394,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 5.688912792014889,
+            "min_sec": 5.688912792014889,
+            "max_sec": 5.688912792014889,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 14.135814958019182,
+            "min_sec": 14.135814958019182,
+            "max_sec": 14.135814958019182,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 9.38304354203865,
+            "min_sec": 9.38304354203865,
+            "max_sec": 9.38304354203865,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7533866669982672,
+            "min_sec": 0.7533866669982672,
+            "max_sec": 0.7533866669982672,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 10.136430209036916,
+            "min_sec": 10.136430209036916,
+            "max_sec": 10.136430209036916,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 24.23977816698607,
+            "min_sec": 24.23977816698607,
+            "max_sec": 24.23977816698607,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 50,
+      "forward": {
+        "full": {
+          "value": -56370.93989747542,
+          "rel_error": 9.815254934018804e-06,
+          "adjoint_forward_value": -56370.93989747542,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56343.27783109922,
+          "rel_error": 0.0005005254491631181,
+          "adjoint_forward_value": -56343.27783109922,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -893.5608292279941,
+            "log_outputscale": 231.90260369762183,
+            "log_noise": 29766.774428558852,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.0007078558414953402,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -878.4398088174013,
+            "log_outputscale": 231.90260368769316,
+            "log_noise": 29766.774428558874,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.000235863490036002,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -1348.9579136274444,
+            "log_outputscale": 317.4960201226667,
+            "log_noise": 29681.15023425047,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.016528312488522042,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -2837626.53125,
+            "log_outputscale": 117132.125,
+            "log_noise": 29655.034782498296,
+            "mean": 0.0
+          },
+          "rel_error_l2": 95.32654162012747,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 6.284180500078946,
+            "min_sec": 6.284180500078946,
+            "max_sec": 6.284180500078946,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.8092041249619797,
+            "min_sec": 0.8092041249619797,
+            "max_sec": 0.8092041249619797,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 7.093384625040926,
+            "min_sec": 7.093384625040926,
+            "max_sec": 7.093384625040926,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 18.84063787490595,
+            "min_sec": 18.84063787490595,
+            "max_sec": 18.84063787490595,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 11.759678417001851,
+            "min_sec": 11.759678417001851,
+            "max_sec": 11.759678417001851,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7279844580916688,
+            "min_sec": 0.7279844580916688,
+            "max_sec": 0.7279844580916688,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 12.48766287509352,
+            "min_sec": 12.48766287509352,
+            "max_sec": 12.48766287509352,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 29.18510037509259,
+            "min_sec": 29.18510037509259,
+            "max_sec": 29.18510037509259,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 60,
+      "forward": {
+        "full": {
+          "value": -56371.46599689353,
+          "rel_error": 4.825339386799935e-07,
+          "adjoint_forward_value": -56371.46599689353,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56361.1447846553,
+          "rel_error": 0.00018357529328727568,
+          "adjoint_forward_value": -56361.1447846553,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -874.4511728663747,
+            "log_outputscale": 229.03152028654466,
+            "log_noise": 29769.64538435839,
+            "mean": 0.0
+          },
+          "rel_error_l2": 5.19182646330549e-05,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -873.4332355241014,
+            "log_outputscale": 229.03152027461226,
+            "log_noise": 29769.645384358406,
+            "mean": 0.0
+          },
+          "rel_error_l2": 1.9594503146475996e-05,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -1090.7499618026145,
+            "log_outputscale": 266.19112613451813,
+            "log_noise": 29732.48313344119,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.007525523183639656,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -968.1587476730347,
+            "log_outputscale": 260.8404541015625,
+            "log_noise": 29732.482453093202,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.0035990451077941086,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 7.193424625089392,
+            "min_sec": 7.193424625089392,
+            "max_sec": 7.193424625089392,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7246947920648381,
+            "min_sec": 0.7246947920648381,
+            "max_sec": 0.7246947920648381,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 7.91811941715423,
+            "min_sec": 7.91811941715423,
+            "max_sec": 7.91811941715423,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 19.824209291953593,
+            "min_sec": 19.824209291953593,
+            "max_sec": 19.824209291953593,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 13.81031933403574,
+            "min_sec": 13.81031933403574,
+            "max_sec": 13.81031933403574,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7181274580070749,
+            "min_sec": 0.7181274580070749,
+            "max_sec": 0.7181274580070749,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 14.528446792042814,
+            "min_sec": 14.528446792042814,
+            "max_sec": 14.528446792042814,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 35.29205683292821,
+            "min_sec": 35.29205683292821,
+            "max_sec": 35.29205683292821,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 80,
+      "forward": {
+        "full": {
+          "value": -56371.49319727246,
+          "rel_error": 1.383169757574703e-11,
+          "adjoint_forward_value": -56371.49319727246,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56368.33583233441,
+          "rel_error": 5.6009971328454327e-05,
+          "adjoint_forward_value": -56368.33583233441,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9344218190583,
+            "log_outputscale": 228.81662508772513,
+            "log_noise": 29769.86027001107,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.0248560984854697e-08,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.9351387765215,
+            "log_outputscale": 228.8166250997076,
+            "log_noise": 29769.860270011086,
+            "mean": 0.0
+          },
+          "rel_error_l2": 3.8864129318244135e-09,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -966.7871514966233,
+            "log_outputscale": 242.51945214961592,
+            "log_noise": 29756.155045427022,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.0032176256334304045,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -2144.5017874240875,
+            "log_outputscale": 278.35968017578125,
+            "log_noise": 29756.143054369113,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.042728490198562126,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 9.600844666943885,
+            "min_sec": 9.600844666943885,
+            "max_sec": 9.600844666943885,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.8813948329770938,
+            "min_sec": 0.8813948329770938,
+            "max_sec": 0.8813948329770938,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 10.48223949992098,
+            "min_sec": 10.48223949992098,
+            "max_sec": 10.48223949992098,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 27.627815624931827,
+            "min_sec": 27.627815624931827,
+            "max_sec": 27.627815624931827,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 19.20088587491773,
+            "min_sec": 19.20088587491773,
+            "max_sec": 19.20088587491773,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.7886300419922918,
+            "min_sec": 0.7886300419922918,
+            "max_sec": 0.7886300419922918,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 19.989515916910022,
+            "min_sec": 19.989515916910022,
+            "max_sec": 19.989515916910022,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 46.66642962500919,
+            "min_sec": 46.66642962500919,
+            "max_sec": 46.66642962500919,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 100,
+      "forward": {
+        "full": {
+          "value": -56371.49319805512,
+          "rel_error": 5.227398932633043e-14,
+          "adjoint_forward_value": -56371.49319805512,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56370.74771009969,
+          "rel_error": 1.3224555714038772e-05,
+          "adjoint_forward_value": -56370.74771009969,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9350246071057,
+            "log_outputscale": 228.8166116682143,
+            "log_noise": 29769.86028343875,
+            "mean": 0.0
+          },
+          "rel_error_l2": 5.227230099586295e-13,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245791211,
+            "log_outputscale": 228.81661168191704,
+            "log_noise": 29769.860283438837,
+            "mean": 0.0
+          },
+          "rel_error_l2": 8.327744682161577e-13,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -898.7237427231408,
+            "log_outputscale": 232.8145639310946,
+            "log_noise": 29765.861100757673,
+            "mean": 0.0
+          },
+          "rel_error_l2": 0.000886443524438065,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": null,
+            "log_outputscale": null,
+            "log_noise": null,
+            "mean": 0.0
+          },
+          "rel_error_l2": null,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 11.99479362508282,
+            "min_sec": 11.99479362508282,
+            "max_sec": 11.99479362508282,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.8674764579627663,
+            "min_sec": 0.8674764579627663,
+            "max_sec": 0.8674764579627663,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 12.862270083045587,
+            "min_sec": 12.862270083045587,
+            "max_sec": 12.862270083045587,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 33.603070875047706,
+            "min_sec": 33.603070875047706,
+            "max_sec": 33.603070875047706,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 23.435744124930352,
+            "min_sec": 23.435744124930352,
+            "max_sec": 23.435744124930352,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.8495548329083249,
+            "min_sec": 0.8495548329083249,
+            "max_sec": 0.8495548329083249,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 24.285298957838677,
+            "min_sec": 24.285298957838677,
+            "max_sec": 24.285298957838677,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 59.59316545794718,
+            "min_sec": 59.59316545794718,
+            "max_sec": 59.59316545794718,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 150,
+      "forward": {
+        "full": {
+          "value": -56371.49319805433,
+          "rel_error": 3.833425883930898e-14,
+          "adjoint_forward_value": -56371.49319805433,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56371.457022051836,
+          "rel_error": 6.417428080009932e-07,
+          "adjoint_forward_value": -56371.457022051836,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245914309,
+            "log_outputscale": 228.8166116668943,
+            "log_noise": 29769.860283436745,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.1664194185427774e-13,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245693887,
+            "log_outputscale": 228.8166116675726,
+            "log_noise": 29769.86028343692,
+            "mean": 0.0
+          },
+          "rel_error_l2": 8.532752734154173e-13,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -874.898152812081,
+            "log_outputscale": 229.11356409327686,
+            "log_noise": 29769.582092859597,
+            "mean": 0.0
+          },
+          "rel_error_l2": 6.731420217266622e-05,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": 11054774.596603973,
+            "log_outputscale": -1009220.3484778741,
+            "log_noise": 29883.958816110637,
+            "mean": 0.0
+          },
+          "rel_error_l2": 372.74408107416656,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 17.87994454090949,
+            "min_sec": 17.87994454090949,
+            "max_sec": 17.87994454090949,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.0317238749703392,
+            "min_sec": 1.0317238749703392,
+            "max_sec": 1.0317238749703392,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 18.91166841587983,
+            "min_sec": 18.91166841587983,
+            "max_sec": 18.91166841587983,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 48.804569833911955,
+            "min_sec": 48.804569833911955,
+            "max_sec": 48.804569833911955,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 34.50009162502829,
+            "min_sec": 34.50009162502829,
+            "max_sec": 34.50009162502829,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 0.9442331660538912,
+            "min_sec": 0.9442331660538912,
+            "max_sec": 0.9442331660538912,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 35.44432479108218,
+            "min_sec": 35.44432479108218,
+            "max_sec": 35.44432479108218,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 85.98927687492687,
+            "min_sec": 85.98927687492687,
+            "max_sec": 85.98927687492687,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 200,
+      "forward": {
+        "full": {
+          "value": -56371.49319805512,
+          "rel_error": 5.227398932633043e-14,
+          "adjoint_forward_value": -56371.49319805512,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56371.49167275869,
+          "rel_error": 2.7057886817748282e-08,
+          "adjoint_forward_value": -56371.49167275869,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245897265,
+            "log_outputscale": 228.81661166614649,
+            "log_noise": 29769.860283438713,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.8182640869719977e-13,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.9350249769238,
+            "log_outputscale": 228.81661172568897,
+            "log_noise": 29769.86028344545,
+            "mean": 0.0
+          },
+          "rel_error_l2": 1.3036080720887692e-11,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -872.8735332897943,
+            "log_outputscale": 228.8331750971992,
+            "log_noise": 29769.844649776453,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.2016835945174427e-06,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": -325799921.61583304,
+            "log_outputscale": 13737038.420051819,
+            "log_noise": 26705.014900108017,
+            "mean": 0.0
+          },
+          "rel_error_l2": 10948.616955124317,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 23.58702637499664,
+            "min_sec": 23.58702637499664,
+            "max_sec": 23.58702637499664,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.0760235000634566,
+            "min_sec": 1.0760235000634566,
+            "max_sec": 1.0760235000634566,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 24.663049875060096,
+            "min_sec": 24.663049875060096,
+            "max_sec": 24.663049875060096,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 63.85855050000828,
+            "min_sec": 63.85855050000828,
+            "max_sec": 63.85855050000828,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 46.04768000007607,
+            "min_sec": 46.04768000007607,
+            "max_sec": 46.04768000007607,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.1009120410308242,
+            "min_sec": 1.1009120410308242,
+            "max_sec": 1.1009120410308242,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 47.148592041106895,
+            "min_sec": 47.148592041106895,
+            "max_sec": 47.148592041106895,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 116.61212170799263,
+            "min_sec": 116.61212170799263,
+            "max_sec": 116.61212170799263,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 250,
+      "forward": {
+        "full": {
+          "value": -56371.49319804899,
+          "rel_error": 5.640427984100345e-14,
+          "adjoint_forward_value": -56371.49319804899,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56371.49313417633,
+          "rel_error": 1.1331231314606055e-09,
+          "adjoint_forward_value": -56371.49313417633,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245959663,
+            "log_outputscale": 228.8166116629336,
+            "log_noise": 29769.860283425456,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.3254566723853804e-13,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.934995573161,
+            "log_outputscale": 228.81661734586362,
+            "log_noise": 29769.86028636872,
+            "mean": 0.0
+          },
+          "rel_error_l2": 9.977788399827823e-10,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -872.9808040332164,
+            "log_outputscale": 228.81773373345266,
+            "log_noise": 29769.85945304086,
+            "mean": 0.0
+          },
+          "rel_error_l2": 1.5377864576303586e-06,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": null,
+            "log_outputscale": null,
+            "log_noise": null,
+            "mean": 0.0
+          },
+          "rel_error_l2": null,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 30.09147054096684,
+            "min_sec": 30.09147054096684,
+            "max_sec": 30.09147054096684,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.2229718749877065,
+            "min_sec": 1.2229718749877065,
+            "max_sec": 1.2229718749877065,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 31.314442415954545,
+            "min_sec": 31.314442415954545,
+            "max_sec": 31.314442415954545,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 84.20827354094945,
+            "min_sec": 84.20827354094945,
+            "max_sec": 84.20827354094945,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 57.93965399998706,
+            "min_sec": 57.93965399998706,
+            "max_sec": 57.93965399998706,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.2213778330478817,
+            "min_sec": 1.2213778330478817,
+            "max_sec": 1.2213778330478817,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 59.16103183303494,
+            "min_sec": 59.16103183303494,
+            "max_sec": 59.16103183303494,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 145.6462466249941,
+            "min_sec": 145.6462466249941,
+            "max_sec": 145.6462466249941,
+            "repeats": 1
+          }
+        }
+      }
+    },
+    {
+      "m": 300,
+      "forward": {
+        "full": {
+          "value": -56371.49319804846,
+          "rel_error": 6.582650507760128e-14,
+          "adjoint_forward_value": -56371.49319804846,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        },
+        "none": {
+          "value": -56371.49319513402,
+          "rel_error": 5.176647987933998e-11,
+          "adjoint_forward_value": -56371.49319513402,
+          "adjoint_forward_rel_diff_vs_frozen_forward": 0.0
+        }
+      },
+      "gradients": {
+        "ours_full": {
+          "grad": {
+            "log_lengthscale": -872.9350245896229,
+            "log_outputscale": 228.81661167111466,
+            "log_noise": 29769.860283424994,
+            "mean": 0.0
+          },
+          "rel_error_l2": 3.8460094111402407e-13,
+          "error": null
+        },
+        "adjoint_full": {
+          "grad": {
+            "log_lengthscale": -872.9269555190068,
+            "log_outputscale": 228.81517161007912,
+            "log_noise": 29769.860624270466,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.754424986191056e-07,
+          "error": null
+        },
+        "ours_none": {
+          "grad": {
+            "log_lengthscale": -872.9344590781706,
+            "log_outputscale": 228.8167947843768,
+            "log_noise": 29769.860237742432,
+            "mean": 0.0
+          },
+          "rel_error_l2": 2.0017055321715714e-08,
+          "error": null
+        },
+        "adjoint_none": {
+          "grad": {
+            "log_lengthscale": null,
+            "log_outputscale": null,
+            "log_noise": null,
+            "mean": 0.0
+          },
+          "rel_error_l2": null,
+          "error": null
+        }
+      },
+      "timings": {
+        "full": {
+          "forward": {
+            "mean_sec": 36.087706250022165,
+            "min_sec": 36.087706250022165,
+            "max_sec": 36.087706250022165,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.32551583298482,
+            "min_sec": 1.32551583298482,
+            "max_sec": 1.32551583298482,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 37.413222083006985,
+            "min_sec": 37.413222083006985,
+            "max_sec": 37.413222083006985,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 98.66815058304928,
+            "min_sec": 98.66815058304928,
+            "max_sec": 98.66815058304928,
+            "repeats": 1
+          }
+        },
+        "none": {
+          "forward": {
+            "mean_sec": 68.92003270902205,
+            "min_sec": 68.92003270902205,
+            "max_sec": 68.92003270902205,
+            "repeats": 1
+          },
+          "ours_grad_from_frozen_VW": {
+            "mean_sec": 1.3574200419243425,
+            "min_sec": 1.3574200419243425,
+            "max_sec": 1.3574200419243425,
+            "repeats": 1
+          },
+          "ours_total": {
+            "mean_sec": 70.2774527509464,
+            "min_sec": 70.2774527509464,
+            "max_sec": 70.2774527509464,
+            "repeats": 1,
+            "definition": "forward custom_vjp=False plus frozen-VW gradient"
+          },
+          "adjoint_value_and_grad": {
+            "mean_sec": 196.94499524997082,
+            "min_sec": 196.94499524997082,
+            "max_sec": 196.94499524997082,
+            "repeats": 1
+          }
+        }
+      }
+    }
+  ],
+  "notes": [
+    "No GPyTorch baseline is used.",
+    "For each reorthogonalization mode, the forward value and our gradient use Matfree/repo tridiag_sym with custom_vjp=False and frozen V,W.",
+    "The adjoint gradient uses the same Matfree/repo tridiag_sym forward with custom_vjp=True, so only the backward rule differs.",
+    "The objective is mean_l v_l^T log(K(theta)) v_l; with num_probes=1 this is a single-vector objective.",
+    "Timing fields are mean/min/max seconds over --timing-repeats, synchronized with block_until_ready.",
+    "By default, G for log uses a stable symmetric atanh divided-difference formula; --unstable-log-divdiff restores the naive formula.",
+    "If --clip-ritz-to-gp-floor is set, small/ghost Ritz values are clipped to noise^2+jitter before log/G construction; this stabilizes no-reorth but changes the projected small objective."
+  ]
+}

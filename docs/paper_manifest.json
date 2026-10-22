@@ -1,0 +1,226 @@
+{
+  "paper": "Fast and Stable Gradient Approximation for Quadratic Forms of Hermitian Matrix Functions",
+  "reference_manuscript": "Final author-provided PDF, 26 pages, NeurIPS 2026",
+  "output_root": "outputs/paper",
+  "regenerate_command": "python scripts/reproduce_paper.py",
+  "items": [
+    {
+      "item": "Figure 1",
+      "experiment": "matrix_log",
+      "records": [
+        "results/paper/matrix_log/results.json"
+      ],
+      "generator": "experiments/matrix_log/plot.py",
+      "outputs": [
+        "matrix_log/figure1.png",
+        "matrix_log/figure1.pdf"
+      ]
+    },
+    {
+      "item": "Figure 2",
+      "experiment": "gp_training",
+      "records": [
+        "results/paper/gp_training/training.json"
+      ],
+      "generator": "experiments/gp_training/plot.py",
+      "outputs": [
+        "gp_training/figure2.png",
+        "gp_training/figure2.pdf"
+      ]
+    },
+    {
+      "item": "Figure 3",
+      "experiment": "graph",
+      "records": [
+        "results/paper/graph/timing_source/fresh_timing_results.json"
+      ],
+      "generator": "experiments/graph/plots.py",
+      "outputs": [
+        "graph/figure3_graph_speedup.png",
+        "graph/figure3_graph_speedup.pdf"
+      ]
+    },
+    {
+      "item": "Figure 4",
+      "experiment": "graph",
+      "records": [
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_tn.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_tn.csv"
+      ],
+      "generator": "experiments/graph/plots.py",
+      "outputs": [
+        "graph/figure4_graph_sensitivity.png",
+        "graph/figure4_graph_sensitivity.pdf"
+      ]
+    },
+    {
+      "item": "Figure 5",
+      "experiment": "graph",
+      "records": [
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_tn.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_tn.csv"
+      ],
+      "generator": "experiments/graph/plots.py",
+      "outputs": [
+        "graph/figure5_graph_value.png",
+        "graph/figure5_graph_value.pdf"
+      ]
+    },
+    {
+      "item": "Figure 6",
+      "experiment": "hamiltonian",
+      "records": [
+        "results/paper/hamiltonian/results.json"
+      ],
+      "generator": "experiments/hamiltonian/plot.py",
+      "outputs": [
+        "hamiltonian/figure_6.png",
+        "hamiltonian/figure_6.pdf"
+      ]
+    },
+    {
+      "item": "Figure 7",
+      "experiment": "affine_gpu",
+      "records": [
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv"
+      ],
+      "generator": "experiments/affine_gpu/plot.py",
+      "outputs": [
+        "affine_gpu/figures/lanczos_regimes_depth.png",
+        "affine_gpu/figures/lanczos_regimes_depth.pdf"
+      ]
+    },
+    {
+      "item": "Figure 8",
+      "experiment": "affine_gpu",
+      "records": [
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv"
+      ],
+      "generator": "experiments/affine_gpu/plot.py",
+      "outputs": [
+        "affine_gpu/figures/lanczos_regimes_fit.png",
+        "affine_gpu/figures/lanczos_regimes_fit.pdf"
+      ]
+    },
+    {
+      "item": "Table 1",
+      "experiment": "graph",
+      "records": [
+        "results/paper/graph/timing_source/fresh_timing_results.json",
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_amazon_tn.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_sc.csv",
+        "results/paper/graph/accuracy/results_paper_batched_safe_hepth_tn.csv"
+      ],
+      "generator": "experiments/graph/plots.py",
+      "outputs": [
+        "graph/table1_speedups.tex",
+        "graph/table1_sensitivity_errors.csv",
+        "graph/table1_sensitivity_errors.tex",
+        "graph/table1_paper_coarse_error_labels.tex"
+      ]
+    },
+    {
+      "item": "Table 2",
+      "experiment": "hamiltonian",
+      "records": [
+        "results/paper/hamiltonian/results.json"
+      ],
+      "generator": "experiments/hamiltonian/plot.py",
+      "outputs": [
+        "hamiltonian/table_2.csv",
+        "hamiltonian/table_2.tex"
+      ]
+    },
+    {
+      "item": "Table 3",
+      "experiment": "gp_training",
+      "records": [
+        "results/paper/gp_training/diagnostic.json"
+      ],
+      "generator": "experiments/gp_training/plot.py",
+      "outputs": [
+        "gp_training/table3.csv",
+        "gp_training/table3.tex"
+      ]
+    },
+    {
+      "item": "Table 4",
+      "experiment": "graph",
+      "records": [
+        "results/paper/graph/timing_source/fresh_timing_results.json"
+      ],
+      "generator": "experiments/graph/plots.py",
+      "outputs": [
+        "graph/table4_graph_timings.csv",
+        "graph/table4_graph_timings.tex"
+      ]
+    },
+    {
+      "item": "Table 5",
+      "experiment": "affine_gpu",
+      "records": [
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv"
+      ],
+      "generator": "experiments/affine_gpu/tables.py",
+      "outputs": [
+        "affine_gpu/table_5.csv",
+        "affine_gpu/table_5.tex"
+      ]
+    },
+    {
+      "item": "Table 6",
+      "experiment": "affine_gpu",
+      "records": [
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv",
+        "results/paper/affine_gpu/mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv"
+      ],
+      "generator": "experiments/affine_gpu/tables.py",
+      "outputs": [
+        "affine_gpu/table_6a.csv",
+        "affine_gpu/table_6a.tex",
+        "affine_gpu/table_6b.csv",
+        "affine_gpu/table_6b.tex"
+      ]
+    },
+    {
+      "item": "Table 7",
+      "experiment": "affine_gpu",
+      "records": [
+        "experiments/affine_gpu/tables.py"
+      ],
+      "generator": "experiments/affine_gpu/tables.py",
+      "outputs": [
+        "affine_gpu/table_7.csv",
+        "affine_gpu/table_7.tex"
+      ]
+    },
+    {
+      "item": "Table 8",
+      "experiment": "affine_gpu",
+      "records": [
+        "results/paper/affine_gpu/gradient_diagnostics.csv"
+      ],
+      "generator": "experiments/affine_gpu/tables.py",
+      "outputs": [
+        "affine_gpu/table_8.csv",
+        "affine_gpu/table_8.tex"
+      ]
+    }
+  ]
+}

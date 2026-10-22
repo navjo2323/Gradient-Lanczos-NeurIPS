@@ -1,0 +1,115 @@
+{
+  "script": "gp_first_iter_logdet_gradient_diagnostic.py",
+  "config": {
+    "dataset": "protein",
+    "n": 4096,
+    "seed": 0,
+    "device": "auto",
+    "torch_dtype": "float64",
+    "kernel_backend": "standard",
+    "no_ard": false,
+    "train_frac": 0.8,
+    "depth": 40,
+    "probes": 20,
+    "rank_precon": 15,
+    "precondition_logdet": true,
+    "cg_tol": 0.0001,
+    "eval_cg_tol": 0.0001,
+    "noise_min": 0.0001,
+    "probe_seed": 12345,
+    "deterministic_probes": true,
+    "iteration": 1,
+    "num_threads": 0,
+    "outdir": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/experiments-lanczos-adjoints/experiments/applications/gaussian_process/gp_logdet_case_study_outputs",
+    "name": "protein_first_iter_precon15_m40_p20_shared_init",
+    "device_resolved": "cpu",
+    "train_n": 3276,
+    "dtype": "torch.float64"
+  },
+  "dataset_metadata": {
+    "dataset": "protein",
+    "source": "uci_datasets package",
+    "full_n": 45730,
+    "full_d": 9,
+    "is_paper_gp_dataset": true,
+    "paper_size": 45730,
+    "paper_dim": 9,
+    "selected_n": 4096,
+    "selected_d": 9,
+    "selection": "seeded_subset_seed_0",
+    "paper_gp_defaults": {
+      "kernel": "matern32",
+      "lanczos_depth": 10,
+      "num_probes": 10,
+      "datasets": [
+        "elevators",
+        "protein",
+        "kin40k",
+        "kegg_directed",
+        "kegg_undirected"
+      ]
+    }
+  },
+  "initial_hypers": {
+    "lengthscale_mean": 0.5793931942861869,
+    "outputscale": 0.4386814839562703,
+    "noise": 1.7351548975761732,
+    "mean_constant": 0.18203648506130554
+  },
+  "parameter_names": [
+    "model.likelihood.noise_covar.raw_noise",
+    "model.covar_module.raw_outputscale",
+    "model.covar_module.base_kernel.raw_lengthscale",
+    "model.mean_module.raw_constant"
+  ],
+  "probe_summary": {
+    "source": "shared_gaussian_passed_to_ours_and_gpytorch",
+    "probe_vectors_shape": [
+      3276,
+      20
+    ],
+    "num_random_probes": 20,
+    "probe_norm_mean": 57.19143042195442,
+    "probe_norm_min": 55.76905556634606,
+    "probe_norm_max": 58.29972057387915
+  },
+  "methods": {
+    "dense_cholesky": {
+      "logdet": 2411.3484450921937,
+      "runtime_sec": 0.5522698750719428
+    },
+    "gpytorch_preconditioned": {
+      "logdet": 2416.8634156366243,
+      "runtime_sec": 0.15935191593598574,
+      "logdet_rel_error_to_dense": 0.0022870898462041514,
+      "grad_rel_error_to_dense": 0.14359005748215484,
+      "per_parameter_grad_rel_error": {
+        "model.likelihood.noise_covar.raw_noise": 0.07485557934992645,
+        "model.covar_module.raw_outputscale": 0.4182810697313978,
+        "model.covar_module.base_kernel.raw_lengthscale": 0.4318222432797467,
+        "model.mean_module.raw_constant": 0.0
+      }
+    },
+    "ours_no_reorth_preconditioned": {
+      "logdet": 2416.0180815359154,
+      "runtime_sec": 0.25474287604447454,
+      "timings": {
+        "lanczos_sec": 0.12244641699362546,
+        "slq_postprocess_sec": 0.00541637500282377,
+        "logdet_grad_sec": 0.1268800840480253,
+        "logdet_preconditioned": true,
+        "ritz_min": 1.0030987743338058,
+        "ritz_max": 16.193451423008685
+      },
+      "logdet_rel_error_to_dense": 0.0019365249569077078,
+      "grad_rel_error_to_dense": 0.005097040155340332,
+      "per_parameter_grad_rel_error": {
+        "model.likelihood.noise_covar.raw_noise": 0.002375238235742097,
+        "model.covar_module.raw_outputscale": 0.013272453419522203,
+        "model.covar_module.base_kernel.raw_lengthscale": 0.04094737338470423,
+        "model.mean_module.raw_constant": 0.0
+      }
+    }
+  },
+  "plot_path": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/experiments-lanczos-adjoints/experiments/applications/gaussian_process/gp_logdet_case_study_outputs/protein_first_iter_precon15_m40_p20_shared_init_protein_n4096_m40_p20_seed0_errors.png"
+}

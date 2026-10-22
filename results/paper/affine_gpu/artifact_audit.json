@@ -1,0 +1,183 @@
+{
+  "audit_torch_version": "2.13.0",
+  "configuration": {
+    "operator": "hadamard-clusters",
+    "n": 32768,
+    "samples": 2,
+    "clusters": 128,
+    "condition": 10000000000.0,
+    "cluster_width": 1e-08,
+    "seed": 0,
+    "sample_seed": 123,
+    "true_mass": 1e-06,
+    "true_scale": 1.0,
+    "true_alpha": 0.5,
+    "logdet_scale": 1.0,
+    "mass_min": 1e-12,
+    "mass_max": 10.0,
+    "scale_min": 1e-06,
+    "scale_max": 10.0,
+    "alpha_min": 0.05,
+    "alpha_max": 2.0
+  },
+  "prior_center_coordinates": [
+    -13.815510557964274,
+    0.0,
+    0.5
+  ],
+  "prior_strength": 0.0001,
+  "saved_csv_checks": {
+    "mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv": {
+      "rows": 45,
+      "sha256": "971c1565467e2cc72e6cad2a955de51d2c7cb13ee79151925f752c251c230051",
+      "max_reference_absolute_difference": 0.0,
+      "max_recomputed_metric_absolute_difference": 0.0,
+      "max_adam_parameter_difference": 0.0
+    },
+    "mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv": {
+      "rows": 5,
+      "sha256": "c7188cf675571cded53628b614f5f0e0c9bf7d3ed5df768ec411a976aad7c3eb",
+      "max_reference_absolute_difference": 0.0,
+      "max_recomputed_metric_absolute_difference": 0.0,
+      "max_adam_parameter_difference": 0.0
+    },
+    "mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv": {
+      "rows": 4,
+      "sha256": "d9fb6a6d8327ad8ffc7ce497dffe9dc8ebf1e288703538e43dfff8de6bb47c2f",
+      "max_reference_absolute_difference": 0.0,
+      "max_recomputed_metric_absolute_difference": 0.0,
+      "max_adam_parameter_difference": 0.0
+    },
+    "mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv": {
+      "rows": 36,
+      "sha256": "22af7d4eb0156df445124ef9e114d83d9d5f8f6f4af2e62a86c63908884dc4af",
+      "max_reference_absolute_difference": 0.0,
+      "max_recomputed_metric_absolute_difference": 0.0,
+      "max_adam_parameter_difference": 0.0
+    }
+  },
+  "source_sha256": {
+    "examples/python_mps_hadamard_matern_gp_fit.py": "b3317c4b65f3cf6c2415bf8a25910860cf27c6f3412fc1cd9016db61d5268c18",
+    "examples/python_mps_matrix_family_lanczos_stress.py": "dd4a7e5126da4382a4029fe7efb12e60a33eebc601af9d1b93b87d29845549e2",
+    "examples/python_mps_hadamard_matern_alpha_fit.py": "dfe437d28422859b2e0107b86f20b8e411381352c5eb601e435294f574a9fed5"
+  },
+  "tiny_cpu_saved_tensor_check": {
+    "n": 64,
+    "m": 6,
+    "distinct_basis_blocks": [
+      {
+        "bytes": 256,
+        "j": 1,
+        "views": [
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              64,
+              1
+            ]
+          },
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              1,
+              64
+            ]
+          }
+        ]
+      },
+      {
+        "bytes": 512,
+        "j": 2,
+        "views": [
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              64,
+              2
+            ]
+          },
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              2,
+              64
+            ]
+          }
+        ]
+      },
+      {
+        "bytes": 768,
+        "j": 3,
+        "views": [
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              64,
+              3
+            ]
+          },
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              3,
+              64
+            ]
+          }
+        ]
+      },
+      {
+        "bytes": 1024,
+        "j": 4,
+        "views": [
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              64,
+              4
+            ]
+          },
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              4,
+              64
+            ]
+          }
+        ]
+      },
+      {
+        "bytes": 1280,
+        "j": 5,
+        "views": [
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              64,
+              5
+            ]
+          },
+          {
+            "node": "MvBackward0",
+            "field": "_saved_self",
+            "shape": [
+              5,
+              64
+            ]
+          }
+        ]
+      }
+    ],
+    "total_distinct_bytes": 3840,
+    "scope": "Reachable graph after forward completion in current CPU implementation, not historical MPS peak memory. The final m-column stack is transient and is not reachable from T."
+  },
+  "no_benchmark_reruns": true
+}

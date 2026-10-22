@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gradient-lanczos-neurips"
+version = "0.1.0"
+description = "Reproduction code for Fast and Stable Gradient Approximation for Quadratic Forms of Hermitian Matrix Functions"
+requires-python = ">=3.11"
+license = {text = "MIT (original code); bundled baselines retain their own licenses"}
+authors = [{name = "Navjot Singh"}, {name = "Kipton Barros"}, {name = "Xiaoye Sherry Li"}]
+dependencies = ["numpy>=1.26", "scipy>=1.12", "matplotlib>=3.8", "threadpoolctl>=3.5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+matrix-log = ["jax==0.10.0", "jaxlib==0.10.0", "matfree==0.5.5"]
+gp = ["jax==0.10.0", "jaxlib==0.10.0", "torch>=2.6", "gpytorch>=1.14", "linear_operator>=0.6"]
+gpu = ["torch>=2.6"]
+all = ["pytest>=8", "jax==0.10.0", "jaxlib==0.10.0", "matfree==0.5.5", "torch>=2.6", "gpytorch>=1.14", "linear_operator>=0.6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

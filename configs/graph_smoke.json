@@ -1,0 +1,5 @@
+{
+  "script": "experiments/graph/reproduce.py",
+  "args": ["--mode", "smoke"],
+  "description": "Check both graph objectives and the modified-Arnoldi baseline against a dense Fréchet oracle on a deterministic 12-node graph; no download."
+}
