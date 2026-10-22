@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying NeurIPS 2026 paper."
+title: "Gradient Lanczos: NeurIPS reproduction code"
+version: 0.1.0
+type: software
+license: MIT
+repository-code: "https://github.com/navjo2323/Gradient-Lanczos-NeurIPS"
+authors:
+  - family-names: Singh
+    given-names: Navjot
+  - family-names: Barros
+    given-names: Kipton
+  - family-names: Li
+    given-names: Xiaoye Sherry
+preferred-citation:
+  type: conference-paper
+  title: "Fast and Stable Gradient Approximation for Quadratic Forms of Hermitian Matrix Functions"
+  authors:
+    - family-names: Singh
+      given-names: Navjot
+    - family-names: Barros
+      given-names: Kipton
+    - family-names: Li
+      given-names: Xiaoye Sherry
+  year: 2026
+  conference:
+    name: "40th Conference on Neural Information Processing Systems (NeurIPS 2026)"
