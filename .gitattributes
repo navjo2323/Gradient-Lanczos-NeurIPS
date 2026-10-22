@@ -1,0 +1,7 @@
+* text=auto eol=lf
+# Preserve archived record bytes for checksum verification, including CSV CRLF.
+results/paper/** -text
+*.csv -text whitespace=cr-at-eol
+*.raw -text
+*.png -text
+*.pdf -text

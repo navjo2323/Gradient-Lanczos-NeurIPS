@@ -1,0 +1,5 @@
+{
+  "script": "experiments/graph/reproduce_plots.py",
+  "args": [],
+  "description": "Regenerate graph Figures 3–5 and Tables 1/4 from the bundled frozen paper records, with no graph download."
+}

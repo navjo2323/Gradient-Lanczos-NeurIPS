@@ -1,0 +1,70 @@
+{
+  "original_sources": {
+    "examples/python_mps_hadamard_matern_gp_fit.py": "b3317c4b65f3cf6c2415bf8a25910860cf27c6f3412fc1cd9016db61d5268c18",
+    "examples/python_mps_matrix_family_lanczos_stress.py": "dd4a7e5126da4382a4029fe7efb12e60a33eebc601af9d1b93b87d29845549e2",
+    "examples/python_mps_hadamard_matern_alpha_fit.py": "dfe437d28422859b2e0107b86f20b8e411381352c5eb601e435294f574a9fed5"
+  },
+  "adaptation": {
+    "gp_fit.py": "Only imports relocated; numerical function bodies unchanged.",
+    "kernels.py": {
+      "verbatim_extracted_definitions": [
+        "LanczosStats",
+        "Operator",
+        "chebyshev_adjoint_affine",
+        "choose_device",
+        "compute_pro_interval",
+        "fwht",
+        "lanczos",
+        "laplacian_tiles_base",
+        "make_cluster_spectrum",
+        "orthogonalize_selected",
+        "planted_partition_laplacian",
+        "pro_signed_roundoff",
+        "pro_thresholds",
+        "project_against_block",
+        "project_against_tall_block",
+        "reset_pro_estimates",
+        "sbm_laplacian",
+        "sparse_sbm_edges",
+        "synchronize",
+        "tridiagonal",
+        "update_pro_estimates_next"
+      ]
+    },
+    "optimizer.py": {
+      "verbatim_extracted_definitions": [
+        "adam_update",
+        "timed"
+      ]
+    }
+  },
+  "recorded_results": {
+    "mps_hadamard_matern_gp_fit_positive_m128_cheb128_all.csv": "971c1565467e2cc72e6cad2a955de51d2c7cb13ee79151925f752c251c230051",
+    "mps_hadamard_matern_gp_fit_positive_m384_cheb384_initial_all.csv": "c7188cf675571cded53628b614f5f0e0c9bf7d3ed5df768ec411a976aad7c3eb",
+    "mps_hadamard_matern_gp_fit_positive_m768_cheb768_initial_nofull.csv": "d9fb6a6d8327ad8ffc7ce497dffe9dc8ebf1e288703538e43dfff8de6bb47c2f",
+    "mps_hadamard_matern_gp_fit_positive_m1536_far_highscale_cheb.csv": "22af7d4eb0156df445124ef9e114d83d9d5f8f6f4af2e62a86c63908884dc4af"
+  },
+  "paper_outputs": [
+    "Figures 7 and 8",
+    "Tables 5, 6, 7 and 8"
+  ],
+  "unknown_historical_settings": [
+    "PyTorch version and MPS environment",
+    "Ritz clipping choice",
+    "Full reorthogonalization passes",
+    "Chebyshev degree in depth-1536 run",
+    "Original failure log/launch config for reported OOM"
+  ],
+  "reproduction_scope": "Saved CSVs reproduce published outputs exactly. Reconstructed configurations explicitly select current source defaults for unresolved settings and are not original launch records.",
+  "release_source_sha256": {
+    "experiments/affine_gpu/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/affine_gpu/gp_fit.py": "73a8d9a95923d770a22c3b40891bad9dafcd26d2339f1203bd62e3418c76ac62",
+    "experiments/affine_gpu/kernels.py": "d113a16026aa28d89cf6ea5f370f614804eae9c35ef91f478c41b8f1ae728968",
+    "experiments/affine_gpu/optimizer.py": "8a7c0a42618649a9f1c525ff4424bbb05347bfca722398e600d403856baf84b7",
+    "experiments/affine_gpu/plot.py": "86be2d95bd777a51e2ddf4f9fc82e3410238ed30930b7733e2c4183821a9758f",
+    "experiments/affine_gpu/run.py": "c38dea4159ae810b7d16ed527fbde8dda7062217b2a36e3e9d96c666fc38dd65",
+    "experiments/affine_gpu/tables.py": "ae974dfd25b24c816037d82c311fe3dc7a396337b8abb3bf006afc9c1b30d504",
+    "experiments/affine_gpu/validate_m128.py": "7996ceaaf22adc1fc5d09f9c7a91c86afa2eda4583145ce3833aff67cee37722",
+    "experiments/affine_gpu/verify_records.py": "f0431306f827af36f0b77a61af9f5aa38eead0973d7191c0203b9729c455aebf"
+  }
+}

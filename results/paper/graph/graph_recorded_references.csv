@@ -1,0 +1,9 @@
+graph,objective,m,reference_value,reference_gradient,reference_kind,reference_source,reference_status
+HepTh,TN,16,1.2952151982955709,3452721.5433580093,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_tn.csv,existing_recorded_reference_not_recomputed
+HepTh,TN,32,1.2952151982955709,3452721.5433580093,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_tn.csv,existing_recorded_reference_not_recomputed
+HepTh,SC,16,1.2952151982955709,0.0689566914565376,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_sc.csv,existing_recorded_reference_not_recomputed
+HepTh,SC,32,1.2952151982955709,0.0689566914565376,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_sc.csv,existing_recorded_reference_not_recomputed
+Amazon,TN,16,2.6970929907605483,163.08898571977184,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_tn.csv,existing_recorded_reference_not_recomputed
+Amazon,TN,32,2.6970929907605483,163.08898571977184,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_tn.csv,existing_recorded_reference_not_recomputed
+Amazon,SC,16,2.6970929907605483,0.8005224978203137,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_sc.csv,existing_recorded_reference_not_recomputed
+Amazon,SC,32,2.6970929907605483,0.8005224978203137,sparse_block,/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_sc.csv,existing_recorded_reference_not_recomputed

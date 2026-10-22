@@ -1,0 +1,28 @@
+{
+  "script": "experiments/gp_training/diagnostic.py",
+  "args": [
+    "--dataset",
+    "toy",
+    "--n",
+    "64",
+    "--seed",
+    "0",
+    "--device",
+    "cpu",
+    "--torch-dtype",
+    "float64",
+    "--depth",
+    "8",
+    "--probes",
+    "3",
+    "--rank-precon",
+    "5",
+    "--num-threads",
+    "1",
+    "--outdir",
+    "outputs/gp_training/quick",
+    "--name",
+    "toy_diagnostic"
+  ],
+  "description": "Small offline diagnostic using dense Cholesky reference."
+}

@@ -1,0 +1,786 @@
+{
+  "status": "fresh_run_current_source_not_historical_timing",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "requested_threadpool_limit": 1,
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "warmup_per_case_and_depth": 1,
+  "measured_repeats": 3,
+  "timing_scope": "Each method complete forward value and gradient; reference, graph loading, warmup excluded. Ours excludes unused exact Lanczos adjoint.",
+  "source_sha256": {
+    "benchmark_pkg_lanczos.py": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+    "paper_benchmark.py": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+    "benchmark_pkg_references.py": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+    "benchmark_pkg_directions.py": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+    "fAb-frechet/lib.py": "77446af111719f63f6db12de742d7ca503d14dca561008128e0ff8a28862fe00"
+  },
+  "cases": [
+    {
+      "graph": "hepth",
+      "objective": "tn",
+      "depth": 16,
+      "n": 9877,
+      "nnz": 51946,
+      "i": 7200,
+      "j": 6969,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_tn.csv",
+      "recorded_ours_value": 1.2952151951498312,
+      "recorded_ours_gradient": 3453379.173624207,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005068125203251839,
+            "historical_scope_seconds": 0.004710792098194361,
+            "small_matrix_seconds": 0.000242666807025671,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005056458991020918
+          },
+          "ko_seconds": 0.007167540956288576,
+          "ko_internal_seconds": 0.007146209012717009,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.4142391256809714
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005113667342811823,
+            "historical_scope_seconds": 0.004756792914122343,
+            "small_matrix_seconds": 0.0002604583278298378,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005099749658256769
+          },
+          "ko_seconds": 0.006736500188708305,
+          "ko_internal_seconds": 0.006717790849506855,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.3173520561867726
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 3453379.173624207,
+            "complete_seconds": 0.005136040970683098,
+            "historical_scope_seconds": 0.004847999662160873,
+            "small_matrix_seconds": 0.00019837636500597,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005125416908413172
+          },
+          "ko_seconds": 0.007140583824366331,
+          "ko_internal_seconds": 0.007123082876205444,
+          "ko_value": 1.6805471709792457,
+          "ko_gradient": 3455147.4477596283,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.390289498297485
+        }
+      ],
+      "mean_complete_speedup": 1.373960226721743,
+      "mean_ours_seconds": 0.005105944505582253,
+      "mean_ko_seconds": 0.007014874989787738,
+      "mean_small_matrix_seconds": 0.0002338338332871596,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "hepth",
+      "objective": "tn",
+      "depth": 32,
+      "n": 9877,
+      "nnz": 51946,
+      "i": 7200,
+      "j": 6969,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_tn.csv",
+      "recorded_ours_value": 1.2952151982958657,
+      "recorded_ours_gradient": 3452721.543357943,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.01003320887684822,
+            "historical_scope_seconds": 0.009522250387817621,
+            "small_matrix_seconds": 0.000380875077098608,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010012375190854073
+          },
+          "ko_seconds": 0.01374629233032465,
+          "ko_internal_seconds": 0.013720833230763674,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.3700793533805944
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.009808292146772146,
+            "historical_scope_seconds": 0.009303375147283077,
+            "small_matrix_seconds": 0.0003766249865293503,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.009791332762688398
+          },
+          "ko_seconds": 0.014521583914756775,
+          "ko_internal_seconds": 0.014497583266347647,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.4805415354125384
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 3452721.543357943,
+            "complete_seconds": 0.009574042167514563,
+            "historical_scope_seconds": 0.009170124772936106,
+            "small_matrix_seconds": 0.00031124986708164215,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.009557750076055527
+          },
+          "ko_seconds": 0.014164458028972149,
+          "ko_internal_seconds": 0.014140833634883165,
+          "ko_value": 1.2952151883320653,
+          "ko_gradient": 3452721.5431861877,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 1.4794647632776476
+        }
+      ],
+      "mean_complete_speedup": 1.4433618840235933,
+      "mean_ours_seconds": 0.009805181063711643,
+      "mean_ko_seconds": 0.014144111424684525,
+      "mean_small_matrix_seconds": 0.00035624997690320015,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "hepth",
+      "objective": "sc",
+      "depth": 16,
+      "n": 9877,
+      "nnz": 51946,
+      "i": 7200,
+      "j": 6969,
+      "ell": 7200,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_sc.csv",
+      "recorded_ours_value": 1.2952151951498312,
+      "recorded_ours_gradient": 0.46046729258341657,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.005063832737505436,
+            "historical_scope_seconds": 0.004584168083965778,
+            "small_matrix_seconds": 0.0002099587582051754,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005048499908298254
+          },
+          "ko_seconds": 0.007046957965940237,
+          "ko_internal_seconds": 0.006782750133424997,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.3916253421537252
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.0050598750822246075,
+            "historical_scope_seconds": 0.004546832758933306,
+            "small_matrix_seconds": 0.0002065417356789112,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005044125020503998
+          },
+          "ko_seconds": 0.00724216690286994,
+          "ko_internal_seconds": 0.006974999792873859,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.4312936159850558
+        },
+        {
+          "ours": {
+            "value": 1.2952151951498312,
+            "gradient": 0.46046729258341657,
+            "complete_seconds": 0.0050576659850776196,
+            "historical_scope_seconds": 0.004632124211639166,
+            "small_matrix_seconds": 0.00014795875176787376,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.005046291742473841
+          },
+          "ko_seconds": 0.006986916996538639,
+          "ko_internal_seconds": 0.00673262495547533,
+          "ko_value": 0.7746408797288495,
+          "ko_gradient": 0.052393533672656645,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.3814508544362507
+        }
+      ],
+      "mean_complete_speedup": 1.4014566041916774,
+      "mean_ours_seconds": 0.005060457934935887,
+      "mean_ko_seconds": 0.007092013955116272,
+      "mean_small_matrix_seconds": 0.0001881530818839868,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "hepth",
+      "objective": "sc",
+      "depth": 32,
+      "n": 9877,
+      "nnz": 51946,
+      "i": 7200,
+      "j": 6969,
+      "ell": 7200,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_hepth_sc.csv",
+      "recorded_ours_value": 1.2952151982958657,
+      "recorded_ours_gradient": 0.06895669149807482,
+      "repeats": [
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.00965545792132616,
+            "historical_scope_seconds": 0.009015998337417841,
+            "small_matrix_seconds": 0.0003344584256410599,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.009634457994252443
+          },
+          "ko_seconds": 0.014234540984034538,
+          "ko_internal_seconds": 0.01395829115062952,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.4742481506334864
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.00993416691198945,
+            "historical_scope_seconds": 0.009226791560649872,
+            "small_matrix_seconds": 0.00036741839721798897,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.009912249632179737
+          },
+          "ko_seconds": 0.014766291249543428,
+          "ko_internal_seconds": 0.014471209142357111,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.4864146516123193
+        },
+        {
+          "ours": {
+            "value": 1.2952151982958657,
+            "gradient": 0.06895669149807482,
+            "complete_seconds": 0.010246041230857372,
+            "historical_scope_seconds": 0.009523666929453611,
+            "small_matrix_seconds": 0.00039175013080239296,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.010224124882370234
+          },
+          "ko_seconds": 0.01495700003579259,
+          "ko_internal_seconds": 0.014650166966021061,
+          "ko_value": 1.2952151981990028,
+          "ko_gradient": 0.06895669145409755,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 1.4597833152132467
+        }
+      ],
+      "mean_complete_speedup": 1.4734820391530175,
+      "mean_ours_seconds": 0.009945222021390995,
+      "mean_ko_seconds": 0.014652610756456852,
+      "mean_small_matrix_seconds": 0.00036454231788714725,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "amazon",
+      "objective": "tn",
+      "depth": 16,
+      "n": 334863,
+      "nnz": 1851744,
+      "i": 0,
+      "j": 53525,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_tn.csv",
+      "recorded_ours_value": 2.697092990760548,
+      "recorded_ours_gradient": 163.08896993018465,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.16315516643226147,
+            "historical_scope_seconds": 0.16170812491327524,
+            "small_matrix_seconds": 0.00031520891934633255,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.16313691716641188
+          },
+          "ko_seconds": 0.3730967496521771,
+          "ko_internal_seconds": 0.37298570899292827,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.2867602528975315
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.1642877501435578,
+            "historical_scope_seconds": 0.16286670975387096,
+            "small_matrix_seconds": 0.00031454209238290787,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.16426716605201364
+          },
+          "ko_seconds": 0.37224554223939776,
+          "ko_internal_seconds": 0.3721290840767324,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.2658143526472454
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08896993018465,
+            "complete_seconds": 0.1676123752258718,
+            "historical_scope_seconds": 0.16614620806649327,
+            "small_matrix_seconds": 0.000327209010720253,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.1675934586673975
+          },
+          "ko_seconds": 0.38175687519833446,
+          "ko_internal_seconds": 0.38163975020870566,
+          "ko_value": 2.697093136763354,
+          "ko_gradient": 163.08537025865763,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.2776174771336835
+        }
+      ],
+      "mean_complete_speedup": 2.276730694226153,
+      "mean_ours_seconds": 0.16501843060056368,
+      "mean_ko_seconds": 0.3756997223633031,
+      "mean_small_matrix_seconds": 0.0003189866741498311,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "amazon",
+      "objective": "tn",
+      "depth": 32,
+      "n": 334863,
+      "nnz": 1851744,
+      "i": 0,
+      "j": 53525,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_tn.csv",
+      "recorded_ours_value": 2.697092990760548,
+      "recorded_ours_gradient": 163.08898571977284,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.3298022081144154,
+            "historical_scope_seconds": 0.32793137477710843,
+            "small_matrix_seconds": 0.0005947919562458992,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.3297745422460139
+          },
+          "ko_seconds": 0.8796945419162512,
+          "ko_internal_seconds": 0.8795805000700057,
+          "ko_value": 2.697092990760879,
+          "ko_gradient": 163.08898571994473,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.667339757807402
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.32949912501499057,
+            "historical_scope_seconds": 0.32778920885175467,
+            "small_matrix_seconds": 0.0005325418896973133,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.32947404170408845
+          },
+          "ko_seconds": 0.8838139581494033,
+          "ko_internal_seconds": 0.8836729996837676,
+          "ko_value": 2.697092990760879,
+          "ko_gradient": 163.08898571994473,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.6822953114342694
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 163.08898571977284,
+            "complete_seconds": 0.3301063752733171,
+            "historical_scope_seconds": 0.3285252917557955,
+            "small_matrix_seconds": 0.00045458320528268814,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.3300802088342607
+          },
+          "ko_seconds": 0.8885477078147233,
+          "ko_internal_seconds": 0.8884328748099506,
+          "ko_value": 2.697092990760879,
+          "ko_gradient": 163.08898571994473,
+          "ko_kind": "modified_arnoldi",
+          "complete_speedup": 2.6917011435451235
+        }
+      ],
+      "mean_complete_speedup": 2.680445404262265,
+      "mean_ours_seconds": 0.32980256946757436,
+      "mean_ko_seconds": 0.8840187359601259,
+      "mean_small_matrix_seconds": 0.0005273056837419668,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 2.759613844456053e-13,
+      "max_ko_gradient_difference_vs_recorded": 2.631494766526992e-12
+    },
+    {
+      "graph": "amazon",
+      "objective": "sc",
+      "depth": 16,
+      "n": 334863,
+      "nnz": 1851744,
+      "i": 0,
+      "j": 53525,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_sc.csv",
+      "recorded_ours_value": 2.697092990760548,
+      "recorded_ours_gradient": 0.8005224939752624,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.1703797080554068,
+            "historical_scope_seconds": 0.16444216622039676,
+            "small_matrix_seconds": 0.00031233252957463264,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.1703627910465002
+          },
+          "ko_seconds": 0.3685079999268055,
+          "ko_internal_seconds": 0.36324100010097027,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.162863196167516
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.1681609582155943,
+            "historical_scope_seconds": 0.16211362602189183,
+            "small_matrix_seconds": 0.00029008323326706886,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.16814395785331726
+          },
+          "ko_seconds": 0.37914662482216954,
+          "ko_internal_seconds": 0.37417474994435906,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.2546649879104317
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224939752624,
+            "complete_seconds": 0.171100958250463,
+            "historical_scope_seconds": 0.16491420846432447,
+            "small_matrix_seconds": 0.00030362559482455254,
+            "effective_depths": [
+              16,
+              16
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.17108341678977013
+          },
+          "ko_seconds": 0.36752854101359844,
+          "ko_internal_seconds": 0.3623915840871632,
+          "ko_value": 2.697093269109675,
+          "ko_gradient": 0.8005225124706139,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.148021523500754
+        }
+      ],
+      "mean_complete_speedup": 2.1885165691929007,
+      "mean_ours_seconds": 0.1698805415071547,
+      "mean_ko_seconds": 0.37172772192085785,
+      "mean_small_matrix_seconds": 0.00030201378588875133,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 0.0
+    },
+    {
+      "graph": "amazon",
+      "objective": "sc",
+      "depth": 32,
+      "n": 334863,
+      "nnz": 1851744,
+      "i": 0,
+      "j": 53525,
+      "ell": 0,
+      "recorded_csv": "/Users/nsingh2/Desktop/Projects/Gradients-Lanczos/Graph-estrada-benchmark/results_paper_batched_safe_r3_amazon_sc.csv",
+      "recorded_ours_value": 2.697092990760548,
+      "recorded_ours_gradient": 0.8005224978203211,
+      "repeats": [
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.33309658290818334,
+            "historical_scope_seconds": 0.3267898755148053,
+            "small_matrix_seconds": 0.0004192921333014965,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.3330728751607239
+          },
+          "ko_seconds": 0.884267000015825,
+          "ko_internal_seconds": 0.8788668341003358,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.8005224978203148,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.6546864945161253
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.33198766596615314,
+            "historical_scope_seconds": 0.3259337921626866,
+            "small_matrix_seconds": 0.00041120871901512146,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.3319667913019657
+          },
+          "ko_seconds": 0.8908310420811176,
+          "ko_internal_seconds": 0.8854013332165778,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.8005224978203148,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.6833257178052508
+        },
+        {
+          "ours": {
+            "value": 2.697092990760548,
+            "gradient": 0.8005224978203211,
+            "complete_seconds": 0.3314865003339946,
+            "historical_scope_seconds": 0.32518216501921415,
+            "small_matrix_seconds": 0.0004492504522204399,
+            "effective_depths": [
+              32,
+              32
+            ],
+            "start_norms": [
+              1.4142135623730951,
+              1.4142135623730951
+            ],
+            "internal_complete_seconds": 0.33146416675299406
+          },
+          "ko_seconds": 0.9034058330580592,
+          "ko_internal_seconds": 0.8982804156839848,
+          "ko_value": 2.6970929907605443,
+          "ko_gradient": 0.8005224978203148,
+          "ko_kind": "modified_arnoldi_swapped_start",
+          "complete_speedup": 2.725317115924232
+        }
+      ],
+      "mean_complete_speedup": 2.687776442748536,
+      "mean_ours_seconds": 0.3321902497361104,
+      "mean_ko_seconds": 0.8928346250516673,
+      "mean_small_matrix_seconds": 0.0004265837681790193,
+      "max_ours_value_difference_vs_recorded": 0.0,
+      "max_ours_gradient_difference_vs_recorded": 0.0,
+      "max_ko_value_difference_vs_recorded": 0.0,
+      "max_ko_gradient_difference_vs_recorded": 2.220446049250313e-16
+    }
+  ],
+  "threadpools": []
+}

@@ -1,0 +1,19 @@
+{
+  "script": "experiments/graph/reproduce.py",
+  "args": ["--mode", "both"],
+  "description": "Regenerate graph accuracy and complete-call timings after downloading the SNAP graphs; compare fresh outputs with the frozen paper references.",
+  "graphs": ["hepth", "amazon"],
+  "objectives": ["tn", "sc"],
+  "accuracy_depths": [4, 8, 16, 32],
+  "timing_depths": [16, 32],
+  "warmup_calls": 1,
+  "repeats": 3,
+  "recorded_match_tolerance": 5e-8,
+  "matrix": "raw_adj",
+  "theta": 0.0,
+  "time_scale": 1.0,
+  "precision": "float64",
+  "reorthogonalization": "none",
+  "breakdown_tolerance": 1e-14,
+  "starting_vectors": "two independent scalar recurrences from (e_i+e_j)/sqrt(2) and (e_i-e_j)/sqrt(2), in a two-column batch"
+}

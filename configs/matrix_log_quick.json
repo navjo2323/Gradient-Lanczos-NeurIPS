@@ -1,0 +1,22 @@
+{
+  "script": "experiments/matrix_log/run.py",
+  "args": [
+    "--n",
+    "64",
+    "--d",
+    "2",
+    "--depths",
+    "4,8,16,32",
+    "--num-probes",
+    "1",
+    "--seed",
+    "0",
+    "--reference",
+    "dense",
+    "--row-block-size",
+    "32",
+    "--outdir",
+    "outputs/matrix_log/quick"
+  ],
+  "description": "Small offline analogue; same value and gradient implementations."
+}

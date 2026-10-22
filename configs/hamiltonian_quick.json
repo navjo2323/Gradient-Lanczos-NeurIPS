@@ -1,0 +1,21 @@
+{
+  "sites": 3,
+  "samples": 2,
+  "depths": [
+    4,
+    7
+  ],
+  "diag_depths": [
+    4,
+    7
+  ],
+  "steps": 3,
+  "lr": 0.01,
+  "t_min": 0.2,
+  "t_max": 0.7,
+  "seed": 0,
+  "disorder": 0.05,
+  "regime": "easy",
+  "init_scale": 0.1,
+  "out_dir": "results/reruns/hamiltonian_quick"
+}

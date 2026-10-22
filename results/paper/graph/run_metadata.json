@@ -1,0 +1,66 @@
+{
+  "status": "fresh_run_current_source_not_historical_timing",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "requested_threadpool_limit": 1,
+  "thread_environment": {
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "warmup_per_case_and_depth": 1,
+  "measured_repeats": 3,
+  "timing_scope": "Each method complete forward value and gradient; reference, graph loading, warmup excluded. Ours excludes unused exact Lanczos adjoint.",
+  "source_sha256": {
+    "benchmark_pkg_lanczos.py": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+    "paper_benchmark.py": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+    "benchmark_pkg_references.py": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+    "benchmark_pkg_directions.py": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+    "fAb-frechet/lib.py": "77446af111719f63f6db12de742d7ca503d14dca561008128e0ff8a28862fe00"
+  },
+  "threadpools": [],
+  "run_id": "graph_complete_cpu_r3_v1",
+  "measurement_timestamp": null,
+  "measurement_timestamp_note": "The original fresh-run record contains no wall-clock timestamp. Packaging occurred in the current conversation.",
+  "hardware_model": null,
+  "hardware_model_note": "CPU model and RAM were not captured; hardware query was unavailable in this sandbox. Do not infer them.",
+  "statistics": {
+    "primary_speedup": "arithmetic mean of three paired KO/ours outer-call time ratios",
+    "speedup_ci95": "mean +/- t(0.975,df=2)*sample_sd/sqrt(3)",
+    "t_critical": 4.302652729911275,
+    "time_unit_raw": "seconds",
+    "time_unit_table": "milliseconds"
+  },
+  "data_configuration": {
+    "matrix": "raw_adj",
+    "theta": 0.0,
+    "time_scale": 1.0,
+    "precision": "float64",
+    "ours_reorthogonalization": "none",
+    "ours_breakdown_tolerance": 1e-14,
+    "ours_start_vectors": "(e_i+e_j)/sqrt(2), (e_i-e_j)/sqrt(2)",
+    "ours_start_execution": "two independent scalar recurrences in one two-column batch"
+  },
+  "reference_policy": "Accuracy columns compare current outputs with existing recorded sparse-block references; no new sparse-block reference was computed.",
+  "graph_data_sha256": {
+    "ca-HepTh.txt": "8ce8a9aa75f0617d574a8109a6f8b189a9e38d214a6698ceaf25b2eecc873e90",
+    "com-amazon.ungraph.txt": "9c403688d01417ca452910947a7000bcd61965fc583f4afe57eb209c8b057b7a"
+  },
+  "recorded_reference_csv_sha256": {
+    "results_paper_batched_safe_r3_hepth_tn.csv": "9f41b7c34cbe6c4b07f23e5767d441417a92ce865806324769deab8fc13bf777",
+    "results_paper_batched_safe_r3_hepth_sc.csv": "36dde513d77e555c8c086956ce5d2378185088e7827843b6144d7595b90b6d21",
+    "results_paper_batched_safe_r3_amazon_tn.csv": "0d44fcb91ebdac7f02f013ee7db1df441df3333d655df810352b146685165c15",
+    "results_paper_batched_safe_r3_amazon_sc.csv": "be4d3fc7d952c3ff92b8a86f0b0526269186dc4805702c3edb6a2c27fd0f6222"
+  },
+  "source_snapshot_sha256": {
+    "benchmark_pkg_directions.py": "9266523736cdfd3e59388186e36ec1d1b85fdefdf19a92c6a3af076eacba7e43",
+    "benchmark_pkg_references.py": "c7131f9b50c8e0da1c78fe5cb9aad76dae3664e4338ae3a86a23c76913c36035",
+    "paper_benchmark.py": "cc1c386491134256f5db04b4af939770aa585adf0c344a2127e6fc6770ae2d93",
+    "benchmark_pkg_graph_io.py": "899fbea84ee3399cc24007ab1acaf04049a1245c14e4408aa8958fdacafb9e7c",
+    "benchmark_pkg_lanczos.py": "b8ddea47880557b95cd0b6e80c5b799312305cb41740084c9806578f19ad8ac5",
+    "fAb-frechet/lib.py": "77446af111719f63f6db12de742d7ca503d14dca561008128e0ff8a28862fe00"
+  },
+  "recorded_json_sha256": "bdac2a653de61b2f22dc578497a556bc7314b644f9da26662c7b6ac9ea299add"
+}

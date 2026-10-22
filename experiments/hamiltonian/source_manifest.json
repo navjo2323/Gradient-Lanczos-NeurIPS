@@ -1,0 +1,23 @@
+{
+  "original_source": {
+    "path": "Gradients-Lanczos/quantum-benchmarks/quantum_lanczos_pkg/train_gm_vs_dense_hamiltonian.py",
+    "sha256": "8541b9701e61f2313f8bd473346a15947581548db7a11b3b4eb32f51343b78f3"
+  },
+  "adaptation": "train.py is a byte-for-byte copy; run.py and plot.py are release orchestration.",
+  "recorded_results": {
+    "path": "results/paper/hamiltonian/results.json",
+    "sha256": "e9868b0f8cb9b4f79fe94265423f6d70cf920f52d435cc3287c5173a4a2edb09"
+  },
+  "paper_outputs": [
+    "Table 2",
+    "Figure 6"
+  ],
+  "historical_environment": "Original Python/NumPy/SciPy versions were not recorded in results.json.",
+  "release_source_sha256": {
+    "experiments/hamiltonian/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experiments/hamiltonian/plot.py": "3a9192ab4bc9b9984d3e33daae9c861dd7a3f88a04ac4cbecbb079275348a50a",
+    "experiments/hamiltonian/run.py": "77ec8eb487010a1a343d1c144c65097f425833a51e4dc20ba000e75c22bc5312",
+    "experiments/hamiltonian/train.py": "8541b9701e61f2313f8bd473346a15947581548db7a11b3b4eb32f51343b78f3",
+    "experiments/hamiltonian/verify_records.py": "d374fe6fcb3029f208e2cf90610ecbf5200f4d66a2f9462d06d8a6682d49a404"
+  }
+}
