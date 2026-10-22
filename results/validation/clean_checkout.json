@@ -1,0 +1,27 @@
+{
+  "validation_date": "2026-10-22",
+  "tested_commit": "2db5dcd93d8c21b883f180281c8e1086e7954a02",
+  "checkout": "Separate clean Git clone of the committed release branch; no datasets or output files copied into it",
+  "installation": "Editable install from that clean clone using the freshly installed, pinned release dependency environment",
+  "python": "3.11.14",
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 29,
+    "seconds": 5.97
+  },
+  "quickstart": "stored and replay dense-oracle checks passed",
+  "paper_artifacts": {
+    "command": "python scripts/reproduce_paper.py",
+    "figures": 8,
+    "tables": 8,
+    "generated_files_excluding_manifest": 41
+  },
+  "inventory": {
+    "command": "python scripts/verify_release.py",
+    "frozen_record_hashes": 45,
+    "mapped_output_files": 36,
+    "status": "passed"
+  },
+  "git_status_after_checks": "clean; generated files ignored",
+  "remote_ci": "Not run yet: GitHub push authentication pending"
+}

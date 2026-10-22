@@ -23,6 +23,11 @@ observed release-test versions, not a claim about unrecorded original versions.
   numerical definitions were checked against their original files; source
   manifests document portability changes and JSON serialization changes.
 
+A separate clean Git clone of the committed release passed all 29 tests, the
+quickstart, figure/table regeneration and hash/inventory checks. The installed
+core module resolved to that clean checkout; no source-collection paths or data
+caches were needed. See `results/validation/clean_checkout.json`.
+
 ## Direct experiment checks
 
 | Experiment | Fresh computation | Comparison |
