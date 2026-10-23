@@ -1,4 +1,4 @@
-# Gradient Lanczos — NeurIPS 2026
+# Gradient through Lanczos — NeurIPS 2026
 
 Code and recorded results for **Fast and Stable Gradient Approximation for
 Quadratic Forms of Hermitian Matrix Functions**, by Navjot Singh, Kipton Barros,
